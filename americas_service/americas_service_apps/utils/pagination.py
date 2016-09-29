@@ -95,7 +95,7 @@ class ModelPagination():
         fields = self.request.query_params.get('fields', None)
         sort = self.request.query_params.get('sort', None)
         all = self.request.query_params.get('all', None)
-        print ('all=', all)
+        print('all=', all)
         pag = self.request.query_params.get('page', None)
         if (self.request.query_params.get('page', None) is None):
             pag = 1

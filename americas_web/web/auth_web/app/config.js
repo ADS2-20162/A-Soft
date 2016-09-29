@@ -33,13 +33,13 @@ app
         /******************************************************************/
     })
 
-    .config(function($httpProvider) {
-        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
-        //$httpProvider.interceptors.push('authInterceptorService');
-    })
+.config(function($httpProvider) {
+    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    //$httpProvider.interceptors.push('authInterceptorService');
+})
 
-    .config(function($resourceProvider) {
+.config(function($resourceProvider) {
     // Don't strip trailing slashes from calculated URLs
     $resourceProvider.defaults.stripTrailingSlashes = false;
 });

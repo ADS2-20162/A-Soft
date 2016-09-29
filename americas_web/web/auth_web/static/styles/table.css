@@ -6,7 +6,6 @@ table th .md-button{
     transform: scale(0.8);
 }
 
-
 .md-table-pagination {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -240,7 +239,6 @@ table td md-select > .md-select-value > span.md-select-icon:after {
           transform: scaleY(0.4) scaleX(0.8);
 }
 
-
 /* page foot*/
 tfoot ul
 {margin:0px; padding:0px; float:right;}
@@ -253,7 +251,6 @@ tfoot li a
 
 tfoot li a:hover
 {text-decoration:none;}
-
 
 .myactive{
   color:white;

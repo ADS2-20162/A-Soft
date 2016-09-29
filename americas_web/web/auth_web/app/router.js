@@ -21,7 +21,9 @@ app
     //==================================
     .state("apps", {
         url: "/apps",
-        data: { page: 'Apps page' },
+        data: {
+            page: 'Apps page'
+        },
         views: {
             '': {
                 templateUrl: "app/views/pages/apps.tmpl.html"
@@ -32,7 +34,6 @@ app
     //==================================
     // 404 page
     //==================================
-
 
     .state('404', {
         url: '/404',

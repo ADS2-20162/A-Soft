@@ -1,89 +1,48 @@
 <!-- Login -->
-<div>
-    <div class="navbar">
-        <div class="navbar-brand text-center">
-            <div class="md-toolbar-tools">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" style="
-              width: 24px; height: 24px;">
-                    <path d="M 92 80 L 50 0 L 50 100 Z" fill="rgba(139, 195, 74, 0.8)"></path>
-                    <path d="M 8 80 L 50 0 L 50 100 Z" fill="#f3f3f3"></path>
-                </svg>
-                <span class="m-l inline">{{app.name}}</span>
+<div align="center">
+    <!--<div class="col-md-6 col-md-offset-3">
+        <h2>Login</h2>
+        <form name="form" method="post">
+            <div class="form-group">
+                <label for="username">Usuario</label>
+                <input type="text" name="username" id="username" class="form-control" ng-model="user.username" required  placeholder="Usuario"/>
+                <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
             </div>
-        </div>
-    </div>
-    <form name="form" method="post">
-        <div class="input-group m-b-20">
-            <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
-            <div class="fg-line">
-                <input type="text" class="md-input" ng-model="user.username" required placeholder="Username">
+            <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="password" class="form-control" ng-model="" required placeholder="Contraseña" />
+                <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
             </div>
-        </div>
-        <div class="input-group m-b-20">
-            <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
-            <div class="fg-line">
-                <input type="password" class="md-input" ng-model="user.password" required placeholder="Password">
+            <div class="form-actions">
+                <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Register</button>
+                <a href="#/login" class="btn btn-link">Cancel</a>
             </div>
-        </div>
-        <div class="input-group m-b-20">
-            <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
-            <div class="fg-line">
-                <a href="" class="btn btn-login btn-danger btn-float" ng-click="login()">
-                    <ng-md-icon icon="login"></ng-md-icon>
-                </a>
-            </div>
-        </div>
-    </form>
-</div>
-<!-- Register -->
-<div class="lc-block" id="l-register" data-ng-class="{ 'toggled': lctrl.register === 1 }" data-ng-if="lctrl.register === 1">
-    <div class="input-group m-b-20">
-        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
-        <div class="fg-line">
-            <input type="text" class="form-control" placeholder="Username">
-        </div>
-    </div>
-    <div class="input-group m-b-20">
-        <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
-        <div class="fg-line">
-            <input type="text" class="form-control" placeholder="Email Address">
-        </div>
-    </div>
-    <div class="input-group m-b-20">
-        <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
-        <div class="fg-line">
-            <input type="password" class="form-control" placeholder="Password">
+        </form>
+    </div>-->
+    <div class="col-md-6 col-md-offset-3">
+            <h2>LOGIN</h2>
+            <form name="form" method="post">
+                <div class="input-group m-b-20">
+                    <input type="text" name="username" id="username" class="form-control" ng-model="user.username" required  placeholder="Usuario"/>
+                    <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+                </div>
+                <div class="input-group m-b-20">
+                    <input type="password" name="password" id="password" class="form-control" ng-model="user.password" required  placeholder="Contraseña"/>
+                    <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+                </div>
+                <div class="input-group m-b-20">
+                    <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
+                    <div class="fg-line">
+                        <a href="" class="btn btn-login btn-danger btn-float" ng-click="login()">
+                            <ng-md-icon icon="login"></ng-md-icon>
+                        </a>
+                        <md-button class="md-accent md-raised">Raised and Accent Button</md-button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-    <div class="clearfix"></div>
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" value="">
-            <i class="input-helper"></i> Accept the license agreement
-        </label>
-    </div>
-    <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
-    <ul class="login-navigation">
-        <li data-block="#l-login" class="bgm-green" data-ng-click="lctrl.register = 0; lctrl.login = 1">Login</li>
-        <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.register = 0; lctrl.forgot = 1">Forgot Password?</li>
-    </ul>
-</div>
-<!-- Forgot Password -->
-<div class="lc-block" id="l-forget-password" data-ng-class="{ 'toggled': lctrl.forgot === 1 }" data-ng-if="lctrl.forgot === 1">
-    <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
-    <div class="input-group m-b-20">
-        <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
-        <div class="fg-line">
-            <input type="text" class="form-control" placeholder="Email Address">
-        </div>
-    </div>
-    <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
-    <ul class="login-navigation">
-        <li data-block="#l-login" class="bgm-green" data-ng-click="lctrl.forgot = 0; lctrl.login = 1">Login</li>
-        <li data-block="#l-register" class="bgm-red" data-ng-click="lctrl.forgot = 0; lctrl.register = 1">Register</li>
-    </ul>
-</div>
-<!-- Older IE warning message -->
+    <!-- Older IE warning message -->
 <!--[if lt IE 9]>
             <div class="ie-warning">
                 <h1 class="c-white">Warning!!</h1>
@@ -124,4 +83,4 @@
                 </div>
                 <p>Sorry for the inconvenience!</p>
             </div>
-        <![endif]-->
+            <![endif]-->

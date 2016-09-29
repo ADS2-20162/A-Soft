@@ -1,7 +1,7 @@
 app
-    //==================================
-    // base routers
-    //==================================
+//==================================
+// base routers
+//==================================
     .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
@@ -9,7 +9,7 @@ app
     //==================================
     // access page
     //==================================
-    .state('access', {
+        .state('access', {
         url: '/access',
         template: '<div class="indigo bg-big"><div ui-view class="fade-in-down smooth"></div></div>'
     })
