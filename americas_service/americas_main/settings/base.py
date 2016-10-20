@@ -18,6 +18,7 @@ DJANGO_APPS = [
 LOCAL_APPS = [
     'americas_service_apps.auths',
     'americas_service_apps.auths_api',
+    'americas_service_apps.asociacion',
 ]
 
 THIRD_PARTY_APPS = [
@@ -107,5 +108,5 @@ FIXTURE_DIRS = (
     os.path.join(BASE_DIR, 'fixtures'),
 )
 
-# SESSION_COOKIE_AGE = 10 # 600 
-# SESSION_EXPIRE_AT_BROWSER_CLOSE = True 
+# SESSION_COOKIE_AGE = 10 # 600
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = True

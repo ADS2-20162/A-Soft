@@ -90,7 +90,7 @@ class ModelPermission(permissions.BasePermission):
 
         #print ("view.action :", view.action)
         #print ("permissions.SAFE_METHODS:", permissions.SAFE_METHODS)
-        print ("request.method:", request.method)
+        print("request.method:", request.method)
         # if request.method in permissions.SAFE_METHODS:
         #    retuchecksrn True
         # return True
@@ -99,7 +99,7 @@ class ModelPermission(permissions.BasePermission):
 
         if hasattr(view, 'permission_replace_by_model'):
             model = view.permission_replace_by_model
-            print ("permission_replace_by_model:", model)
+            print("permission_replace_by_model:", model)
             perms = self.get_required_virtual_permissions(
                 request.method, model
             )
@@ -115,12 +115,12 @@ class ModelPermission(permissions.BasePermission):
                 'Add permission_replace_by_model = \'app_label.model_name\' '
                 ' variable to APIView class'
             )
-            print ("queryset.model:", queryset.model)
+            print("queryset.model:", queryset.model)
             perms = self.get_required_permissions(
                 request.method, queryset.model
             )
 
-        print ("perms:", perms)
+        print("perms:", perms)
         if request.user.has_perms(perms):
             return True
         else:

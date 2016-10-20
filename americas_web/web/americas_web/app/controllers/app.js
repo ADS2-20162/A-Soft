@@ -2,7 +2,7 @@ app
     .controller("AppCtrl", function($scope, $mdSidenav, $timeout, $rootScope, $window,$document, $log, 
     menuService, $mdBottomSheet, $mdToast, $location, toastr, authService, config) {
 
-    toastr.success('Consumer sign in successfully', 'Message');
+    toastr.success('Consumiendo APIs con exito', 'Message');
 
     $scope.menu = menuService;
     // config
