@@ -1,5 +1,0 @@
-[2016-09-28 00:05:18] [INFO] [americas_service_apps.auths_api.UserView:77] [/api/auths/localuserinfo/] [127.0.0.1] [admin] User is authenticated
-[2016-09-28 07:55:45] [INFO] [americas_service_apps.auths_api.UserView:77] [/api/auths/localuserinfo/] [127.0.0.1] [admin] User is authenticated
-[2016-09-28 07:57:20] [INFO] [americas_service_apps.auths_api.UserView:77] [/api/auths/localuserinfo/] [127.0.0.1] [admin] User is authenticated
-[2016-09-28 09:41:07] [INFO] [americas_service_apps.auths_api.UserView:77] [/api/auths/localuserinfo/] [127.0.0.1] [admin] User is authenticated
-[2016-09-28 09:44:22] [INFO] [americas_service_apps.auths_api.UserView:77] [/api/auths/localuserinfo/] [127.0.0.1] [admin] User is authenticated

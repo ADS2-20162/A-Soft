@@ -2,6 +2,7 @@ from uuid import uuid4
 # from datetime import datetime
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from .CuentaBanco import CuentaBanco
 # from django.utils.text import capfirst, get_text_list
 
 
@@ -17,17 +18,18 @@ class Asociacion(models.Model):
                               max_length=100, null=False)
     denominacion = models.CharField(
         _('denominacion asociacion'), max_length=150, null=True)
+    cuenta_banco = models.ForeignKey(CuentaBanco)
     # presidente = models.ForeignKey(Socio)
     # secretario = models.ForeignKey(Socio)
     # tesorero = models.ForeignKey(Socio)
-    logo = models.ImageField()
+    logo = models.ImageField(null=False, blank=True)
     created_at = models.DateTimeField(_('created at'), auto_now_add=True)
     update_at = models.DateTimeField(
         _('update at'), auto_now=True, blank=True, null=True)
 
     class Meta:
         verbose_name = _('asociacion')
-        verbose_name_plural = _('asociacions')
+        verbose_name_plural = _('asociaciones')
 
     def __str__(self):
-        return '%s %s' % (self.nombre, self.denominacion)
+        return '%s - %s' % (self.ruc, self.nombre)
