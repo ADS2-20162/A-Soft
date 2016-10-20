@@ -4,7 +4,7 @@ from uuid import uuid4
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 # models
-from .ArregloManzana import ArregloManzana
+# from .ArregloManzana import ArregloManzana
 
 
 class Manzana(models.Model):
@@ -17,7 +17,7 @@ class Manzana(models.Model):
         _('manzana'), unique=True, max_length=3, null=False, blank=False)
     # numero_lotes = models.PositiveSmallIntegerField(
     #     _('numero lotes'), default=1, blank=False, null=False)
-    arreglo_manzana = models.ForeignKey(ArregloManzana)
+    # arreglo_manzana = models.ForeignKey(ArregloManzana)
 
     class Meta:
         verbose_name = "Manzana"

@@ -4,7 +4,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 # models
 from .Manzana import Manzana
-from .ArregloManzana import ArregloManzana
+# from .ArregloManzana import ArregloManzana
 
 
 class Lote(models.Model):
@@ -12,7 +12,7 @@ class Lote(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 
     manzana = models.ForeignKey(Manzana)
-    arreglo_manzana = models.ForeignKey(ArregloManzana)
+    lote = models.CharField(max_length=3, unique=True, null=False, blank=False)
     # codigo_lote = models.CharField(
     #     _('arreglo lote'), unique=True, max_length=2, null=False)
     area_total = models.DecimalField(
@@ -34,4 +34,4 @@ class Lote(models.Model):
         verbose_name_plural = "Lotes"
 
     def __str__(self):
-        return '%s - %s' % (self.manzana, self.arreglo_manzana)
+        return '%s - %s' % (self.manzana, self.lote)
