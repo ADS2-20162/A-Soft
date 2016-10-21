@@ -6,8 +6,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.text import capfirst, get_text_list
 
 # models
-from .User import User
-from .Hierarchy import Hierarchy
+from americas_service_apps.auths.models.User import User
+from americas_service_apps.auths.models.Hierarchy import Hierarchy
 
 
 class UserHierarchyPermission(models.Model):

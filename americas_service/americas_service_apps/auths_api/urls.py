@@ -2,16 +2,15 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from rest_framework_extensions.routers import ExtendedSimpleRouter
 
-from .PermissionView import PermissionViewSet
+from americas_service_apps.auths_api.views.PermissionView import PermissionViewSet
 
-from .MenuView import MenuViewSet
-from .UserView import UserViewSet, LocalUserInfoView
-from .api_user_menu import UserMenuView
+from americas_service_apps.auths_api.views.MenuView import MenuViewSet
+from americas_service_apps.auths_api.views.UserView import UserViewSet, LocalUserInfoView
+from americas_service_apps.auths_api.views.UserMenuView import UserMenuView
 
 
 # from .api_views import load_menu
 
-# router = ExtendedSimpleRouter()
 router = routers.DefaultRouter()
 
 router.register(r'permissions', PermissionViewSet)

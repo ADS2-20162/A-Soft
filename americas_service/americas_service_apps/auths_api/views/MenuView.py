@@ -14,7 +14,7 @@ from americas_service_apps.utils.pagination import ModelPagination
 from americas_service_apps.utils.security import log_params
 from americas_service_apps.utils.permissions import ModelPermission
 
-from americas_service_apps.auths.Menu import Menu
+from americas_service_apps.auths.models.Menu import Menu
 import logging
 log = logging.getLogger(__name__)
 

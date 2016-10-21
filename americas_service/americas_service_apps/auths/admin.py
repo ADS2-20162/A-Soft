@@ -4,13 +4,13 @@ from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 
 # Register your models here.
-from .Person import Person
-from .User import User
-from .HierarchyType import HierarchyType
-from .Hierarchy import Hierarchy
-from .Menu import Menu
-from .UserHierarchyGroup import UserHierarchyGroup
-from .UserHierarchyPermission import UserHierarchyPermission
+from americas_service_apps.auths.models.Person import Person
+from americas_service_apps.auths.models.User import User
+from americas_service_apps.auths.models.HierarchyType import HierarchyType
+from americas_service_apps.auths.models.Hierarchy import Hierarchy
+from americas_service_apps.auths.models.Menu import Menu
+from americas_service_apps.auths.models.UserHierarchyGroup import UserHierarchyGroup
+from americas_service_apps.auths.models.UserHierarchyPermission import UserHierarchyPermission
 
 
 admin.site.register(ContentType)

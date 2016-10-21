@@ -17,7 +17,7 @@ from rest_framework import status
 from americas_service_apps.utils.security import log_params
 from americas_service_apps.utils.permissions import ModelPermission
 
-from americas_service_apps.auths.User import User
+from americas_service_apps.auths.models.User import User
 # Get an instance of a logger
 log = logging.getLogger(__name__)
 

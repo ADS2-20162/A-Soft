@@ -5,8 +5,8 @@ from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.utils.translation import ugettext_lazy as _
 from django.utils.text import capfirst, get_text_list
 # models
-from .HierarchyType import HierarchyType
-from .User import User
+from americas_service_apps.auths.models.HierarchyType import HierarchyType
+from americas_service_apps.auths.models.User import User
 
 
 class Hierarchy(models.Model):

@@ -6,7 +6,7 @@ from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.utils.translation import ugettext_lazy as _
 from django.utils.text import capfirst, get_text_list
 # enums
-from .enums import MODULE_CHOICES, BACKEND
+from americas_service_apps.auths.choices.enums import MODULE_CHOICES, BACKEND
 # models
 
 

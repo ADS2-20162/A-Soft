@@ -4,7 +4,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.text import capfirst, get_text_list
 # enums
-from .enums import HIERARCHY_TYPE_CHOICES
+from americas_service_apps.auths.choices.enums import HIERARCHY_TYPE_CHOICES
 # models
 
 
