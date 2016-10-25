@@ -34,4 +34,4 @@ class Lote(models.Model):
         verbose_name_plural = "Lotes"
 
     def __str__(self):
-        return '%s - %s' % (self.manzana, self.lote)
+        return '[%s], Mz-%s Lote-%s' % (self.id, self.manzana, self.lote)

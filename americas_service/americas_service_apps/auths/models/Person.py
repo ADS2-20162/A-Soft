@@ -23,7 +23,7 @@ class Person(models.Model):
     genero = models.CharField(max_length=40, choices=GENRE_CHOICES)
 
     national_id_doc = models.CharField(
-        capfirst(_('DNI')), max_length=20, unique=True,
+        capfirst(_('DNI')), max_length=8, unique=True,
         null=False, blank=False,
         help_text=_(
             'documento nacional de identidad'
