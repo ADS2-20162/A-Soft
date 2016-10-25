@@ -32,3 +32,21 @@ GENRE_CHOICES = (
     (M, _('Masculino')),
     (F, capfirst(_('Femenino'))),
 )
+
+SOLTERO = 'Soltero'
+CASADO = 'Casado'
+VIUDO = 'Viudo'
+DIVORCIADO = 'Divorsiado'
+ESTADO_CIVIL_CHOICES = (
+    (SOLTERO, 'Soltero'),
+    (CASADO, 'Casado'),
+    (VIUDO, 'Viudo'),
+    (DIVORCIADO, 'Divorsiado')
+)
+
+S = 'Si'
+N = 'No'
+SELECT_SN_CHOICES = (
+    (S, 'Si'),
+    (N, 'No')
+)

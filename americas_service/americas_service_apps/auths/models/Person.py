@@ -7,6 +7,7 @@ from django.db.models import signals
 from unicodedata import normalize
 from django.core.exceptions import ValidationError
 from django.core.exceptions import NON_FIELD_ERRORS
+from americas_service_apps.auths.choices.enums import GENRE_CHOICES
 
 # models
 # others
@@ -19,13 +20,18 @@ class Person(models.Model):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
+    genero = models.CharField(max_length=40, choices=GENRE_CHOICES)
+
     national_id_doc = models.CharField(
-        capfirst(_('national identity document')), max_length=20,
-        null=True, blank=True
+        capfirst(_('DNI')), max_length=20, unique=True,
+        null=False, blank=False,
+        help_text=_(
+            'documento nacional de identidad'
+        ),
     )  # extend person documents in DocumentPersonType
 
     first_name = models.CharField(
-        capfirst(_('first name')), max_length=50,
+        capfirst(_('first name')), max_length=50, null=False, blank=False,
         help_text=_(
             'primer nombre'
         ),
@@ -37,18 +43,19 @@ class Person(models.Model):
         ),
     )
     last_name = models.CharField(
-        capfirst(_('last name')), max_length=50, null=True, blank=True,
+        capfirst(_('last name')), max_length=50, null=False, blank=False,
         help_text=_(
             'apellido paterno'
         ),
     )
     mother_last_name = models.CharField(
         capfirst(_('mother\'s last name')), max_length=50,
-        null=True, blank=True,
+        null=False, blank=False,
         help_text=_(
             'apellido materno'
         ),
     )
+
     birth_date = models.DateField(
         _('birth date'), null=True, blank=True
     )
