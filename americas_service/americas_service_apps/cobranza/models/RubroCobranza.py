@@ -6,7 +6,7 @@ from .Mora import Mora
 
 class RubroCobranza(models.Model):
 
-    concepto = models.OneToOneField(ConceptoCobranza)
+    concepto = models.ForeignKey(ConceptoCobranza)
     rubro_cobranza = models.CharField(
         max_length=100, unique=True, null=False, blank=False)
     importe = models.DecimalField(
@@ -22,7 +22,8 @@ class RubroCobranza(models.Model):
         verbose_name_plural = "RubroCobranzas"
 
     def __str__(self):
-        return 'Concepto - %s, Importe S/ - %s, Mora - S/ %s' % (
+        return 'Concepto - %s, Rubro %s, Importe S/ - %s, Mora - S/ %s' % (
             self.concepto.concepto_cobranza,
+            self.rubro_cobranza,
             self.importe,
             self.mora.valor)
