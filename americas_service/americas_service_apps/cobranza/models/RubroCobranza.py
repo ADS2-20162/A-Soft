@@ -1,16 +1,18 @@
 from django.db import models
 from americas_service_apps.utils.choices.Global import SELECT_SN_CHOICES
+from .ConceptoCobranza import ConceptoCobranza
+from .Mora import Mora
 
 
 class RubroCobranza(models.Model):
 
-    concepto_cobranza = models.CharField(
-        max_length=80, unique=True, null=False, blank=False)
+    concepto = models.OneToOneField(ConceptoCobranza)
+    rubro_cobranza = models.CharField(
+        max_length=100, unique=True, null=False, blank=False)
     importe = models.DecimalField(
         decimal_places=2, max_digits=5, null=False, blank=False)
-    is_mora = models.CharField(max_length=2, choices=SELECT_SN_CHOICES)
-    mora = models.DecimalField(
-        decimal_places=2, max_digits=5, null=True, blank=True, default=0.0)
+    con_mora = models.CharField(max_length=2, choices=SELECT_SN_CHOICES)
+    mora = models.OneToOneField(Mora, null=True, blank=True)
     detalle = models.TextField(max_length=500, null=True, blank=True)
     fecha_inicio = models.DateField(null=False, blank=False)
     fecha_fin = models.DateField(null=False, blank=False)
@@ -20,4 +22,7 @@ class RubroCobranza(models.Model):
         verbose_name_plural = "RubroCobranzas"
 
     def __str__(self):
-        return '%s %s' % (self.concepto_cobranza, self.importe)
+        return 'Concepto - %s, Importe S/ - %s, Mora - S/ %s' % (
+            self.concepto.concepto_cobranza,
+            self.importe,
+            self.mora.valor)
