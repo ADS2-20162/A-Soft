@@ -7,6 +7,7 @@ from django.db.models import signals
 from unicodedata import normalize
 from django.core.exceptions import ValidationError
 from django.core.exceptions import NON_FIELD_ERRORS
+from americas_service_apps.auths.models.DocumentoIdentidad import DocumentoIdentidad
 from americas_service_apps.auths.choices.enums import GENRE_CHOICES
 
 # models
@@ -22,12 +23,12 @@ class Person(models.Model):
 
     genero = models.CharField(max_length=40, choices=GENRE_CHOICES)
 
-    national_id_doc = models.CharField(
-        capfirst(_('DNI')), max_length=8, unique=True,
+    tipo_documento = models.ForeignKey(
+        DocumentoIdentidad, null=False, blank=False)
+    documento = models.CharField(
+        capfirst(_('identificacion')), max_length=8, unique=True,
         null=False, blank=False,
-        help_text=_(
-            'documento nacional de identidad'
-        ),
+        help_text=_('documento nacional de identidad'),
     )  # extend person documents in DocumentPersonType
 
     first_name = models.CharField(
@@ -89,4 +90,4 @@ class Person(models.Model):
     def __str__(self):
         return '%s %s (%s)' % (self.first_name,
                                self.last_name,
-                               self.national_id_doc)
+                               self.documento)

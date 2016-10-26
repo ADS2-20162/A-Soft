@@ -22,6 +22,7 @@ class Asociacion(models.Model):
     # presidente = models.ForeignKey(Socio)
     # secretario = models.ForeignKey(Socio)
     # tesorero = models.ForeignKey(Socio)
+    website = models.URLField(null=True, blank=True)
     logo = models.ImageField(null=False, blank=True)
     created_at = models.DateTimeField(_('created at'), auto_now_add=True)
     update_at = models.DateTimeField(

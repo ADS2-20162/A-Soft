@@ -1,37 +1,28 @@
-
 from uuid import uuid4
+# from datetime import datetime, timedelta
 from django.db import models
+# from .Manzana import Manzana
 from django.utils.translation import ugettext_lazy as _
 # models
-from .Manzana import Manzana
-# from .ArregloManzana import ArregloManzana
+# from .ArregloLote import ArregloLote
 
 
 class Lote(models.Model):
-
+    """
+    Clase para crear la tabla Lote
+    """
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 
-    manzana = models.ForeignKey(Manzana)
-    lote = models.CharField(max_length=3, unique=True, null=False, blank=False)
-    # codigo_lote = models.CharField(
-    #     _('arreglo lote'), unique=True, max_length=2, null=False)
-    area_total = models.DecimalField(
-        _('area total'), null=False, blank=False,
-        decimal_places=2, max_digits=5)
+    # manzana = models.ForeignKey(Manzana, null=False, blank=False)
 
-    area_construida = models.DecimalField(
-        _('area construida'), null=False, blank=False,
-        decimal_places=2, max_digits=5)
-    area_sin_construir = models.DecimalField(
-        _('area sin construir'), null=False, blank=False,
-        decimal_places=2, max_digits=5)
-    # imagen = models.ImageField()
-    observaciones = models.TextField(max_length=500, null=True, blank=True)
-    estado = models.BooleanField(default=True)
+    lote = models.ForeignKey(
+        'self', related_name='asociacion', null=True, blank=True)
+    input_lote = models.CharField(
+        _('ingrese lote'), unique=True, max_length=3, null=False, blank=False)
 
     class Meta:
         verbose_name = "Lote"
         verbose_name_plural = "Lotes"
 
     def __str__(self):
-        return '[%s], Mz-%s Lote-%s' % (self.id, self.manzana, self.lote)
+        return '%s' % (self.input_lote)

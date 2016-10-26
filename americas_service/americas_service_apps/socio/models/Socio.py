@@ -22,6 +22,7 @@ class Socio(models.Model):
         max_length=2, choices=SELECT_SN_CHOICES)
     is_adventista = models.CharField(
         max_length=2, choices=SELECT_SN_CHOICES)
+    estado = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = "Socio"
@@ -31,4 +32,4 @@ class Socio(models.Model):
         return '%s %s - (%s)' % (
             self.persona.first_name,
             self.persona.last_name,
-            self.persona.national_id_doc)
+            self.persona.documento)
