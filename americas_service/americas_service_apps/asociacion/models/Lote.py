@@ -15,14 +15,18 @@ class Lote(models.Model):
 
     # manzana = models.ForeignKey(Manzana, null=False, blank=False)
 
-    lote = models.ForeignKey(
+    iteracion_lote = models.ForeignKey(
         'self', related_name='asociacion', null=True, blank=True)
-    input_lote = models.CharField(
+    lote = models.CharField(
         _('ingrese lote'), unique=True, max_length=3, null=False, blank=False)
+    area_total = models.DecimalField(
+        _('area total'), null=False, blank=False,
+        decimal_places=2, max_digits=5, default=0.0)
+    estado = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = "Lote"
         verbose_name_plural = "Lotes"
 
     def __str__(self):
-        return '%s' % (self.input_lote)
+        return '%s' % (self.lote)
