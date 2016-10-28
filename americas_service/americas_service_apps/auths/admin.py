@@ -5,7 +5,6 @@ from django.contrib.contenttypes.models import ContentType
 
 # Register your models here.
 from americas_service_apps.auths.models.Person import Person
-from americas_service_apps.auths.models.DocumentoIdentidad import DocumentoIdentidad
 from americas_service_apps.auths.models.User import User
 from americas_service_apps.auths.models.HierarchyType import HierarchyType
 from americas_service_apps.auths.models.Hierarchy import Hierarchy
@@ -32,7 +31,6 @@ admin.site.register(UserHierarchyPermission)
 admin.site.register(Menu)
 
 admin.site.register(Person)
-admin.site.register(DocumentoIdentidad)
 
 
 # forms
