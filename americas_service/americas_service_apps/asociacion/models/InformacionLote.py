@@ -4,14 +4,14 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 # models
-# from .RelacionManzanaLote import RelacionManzanaLote
+from .Lote import Lote
 
 
 class InformacionLote(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 
-    #informacion_manzana_lote = models.OneToOneField(RelacionManzanaLote)
+    informacion_lote = models.OneToOneField(Lote)
     area_lote = models.DecimalField(
         _('area total'), null=False, blank=False,
         decimal_places=2, max_digits=5, default=0.0)
@@ -24,5 +24,5 @@ class InformacionLote(models.Model):
 
     def __str__(self):
         return '%s Area del Lote: %s' % (
-            #self.informacion_manzana_lote,
+            self.informacion_lote,
             self.area_lote)

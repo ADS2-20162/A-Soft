@@ -20,7 +20,6 @@ LOCAL_APPS = [
     'americas_service_apps.auths_api',
     'americas_service_apps.asociacion',
     'americas_service_apps.cobranza',
-    'americas_service_apps.socio',
 ]
 
 THIRD_PARTY_APPS = [

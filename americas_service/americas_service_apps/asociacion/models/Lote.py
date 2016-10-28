@@ -17,6 +17,7 @@ class Lote(models.Model):
 
     # iteracion_lote = models.ForeignKey(
     #     'self', related_name='asociacion', null=True, blank=True)
+    item = models.IntegerField(default=1, null=False, blank=False)
     lote = models.CharField(
         _('ingrese lote'), unique=True, max_length=3, null=False, blank=False)
     # area_total = models.DecimalField(
@@ -29,4 +30,4 @@ class Lote(models.Model):
         verbose_name_plural = "Lotes"
 
     def __str__(self):
-        return '%s' % (self.lote)
+        return 'Mz-%s L-%s' % (self.manzana, self.lote)

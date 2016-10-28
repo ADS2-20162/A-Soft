@@ -1,5 +1,5 @@
 from django.db import models
-from americas_service_apps.socio.models.SocioLote import SocioLote
+from americas_service_apps.asociacion.models.SocioLote import SocioLote
 from americas_service_apps.cobranza.models.Cuota import Cuota
 
 

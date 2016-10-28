@@ -14,8 +14,10 @@ class Manzana(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 
     manzana = models.ForeignKey(
-        'self', related_name='asociacion', null=True, blank=True)
-    input_manzana = models.CharField(
+        'self', related_name='iteracion_manzana', null=True, blank=True)
+    # item = models.IntegerField(default=1, null=False, blank=False)
+    # manzana_id = models.AutoField(primary_key=True)
+    manzana = models.CharField(
         _('ingrese manzana'), unique=True, max_length=3, null=False, blank=False)
     # numero_lotes = models.PositiveSmallIntegerField(
     #     _('numero lotes'), default=1, blank=False, null=False)
@@ -26,4 +28,4 @@ class Manzana(models.Model):
         verbose_name_plural = "Manzanas"
 
     def __str__(self):
-        return '%s' % (self.input_manzana)
+        return '%s' % (self.manzana)

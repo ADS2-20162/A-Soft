@@ -7,6 +7,8 @@ from .models.Lote import Lote
 from .models.Manzana import Manzana
 from .models.CuentaBanco import CuentaBanco
 from .models.InformacionLote import InformacionLote
+from .models.Socio import Socio
+from .models.SocioLote import SocioLote
 
 # admin.site.register(ContentType)
 
@@ -18,14 +20,16 @@ class LoteInline(admin.TabularInline):
 
 class ManzanaAdmin(admin.ModelAdmin):
     fieldsets = [
-    (None, {'fields': ['manzana']}),]
+        (None, {'fields': ['manzana']}), ]
     inlines = [LoteInline]
 
 admin.site.register(Asociacion)
 admin.site.register(Lote)
-admin.site.register(Manzana,ManzanaAdmin)
+admin.site.register(Manzana, ManzanaAdmin)
 # admin.site.register(ManzanaLote)
 admin.site.register(CuentaBanco)
 # admin.site.register(RelacionManzanaLote, RelacionManzanaLoteAdmin)
 # admin.site.register(RelacionManzanaLote)
 admin.site.register(InformacionLote)
+admin.site.register(Socio)
+admin.site.register(SocioLote)
