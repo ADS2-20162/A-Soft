@@ -1,7 +1,7 @@
 from uuid import uuid4
 # from datetime import datetime, timedelta
 from django.db import models
-# from .Manzana import Manzana
+from .Manzana import Manzana
 from django.utils.translation import ugettext_lazy as _
 # models
 # from .ArregloLote import ArregloLote
@@ -13,10 +13,10 @@ class Lote(models.Model):
     """
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 
-    # manzana = models.ForeignKey(Manzana, null=False, blank=False)
+    manzana = models.ForeignKey(Manzana, null=False, blank=False)
 
-    iteracion_lote = models.ForeignKey(
-        'self', related_name='asociacion', null=True, blank=True)
+    # iteracion_lote = models.ForeignKey(
+    #     'self', related_name='asociacion', null=True, blank=True)
     lote = models.CharField(
         _('ingrese lote'), unique=True, max_length=3, null=False, blank=False)
     # area_total = models.DecimalField(
