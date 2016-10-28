@@ -32,4 +32,4 @@ class Socio(models.Model):
         return '%s %s - (%s)' % (
             self.persona.first_name,
             self.persona.last_name,
-            self.persona.documento)
+            self.persona.documento_identidad)

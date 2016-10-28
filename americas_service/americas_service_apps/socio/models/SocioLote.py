@@ -9,6 +9,9 @@ class SocioLote(models.Model):
     socio = models.ForeignKey(Socio)
     socio_lote = models.OneToOneField(RelacionManzana)
 
+    area_total = models.DecimalField(
+        null=False, blank=False, decimal_places=2, max_digits=5, default=0.0)
+
     class Meta:
         verbose_name = "SocioLote"
         verbose_name_plural = "SocioLotes"
@@ -16,6 +19,6 @@ class SocioLote(models.Model):
     def __str__(self):
         return '%s %s Mz-%s L-%s' % (
             self.socio.persona.first_name,
-            self.socio.persona.documento,
+            self.socio.persona.documento_identidad,
             self.socio_lote.manzana,
             self.socio_lote.lote)

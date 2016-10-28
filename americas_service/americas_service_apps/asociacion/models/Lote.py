@@ -19,9 +19,9 @@ class Lote(models.Model):
         'self', related_name='asociacion', null=True, blank=True)
     lote = models.CharField(
         _('ingrese lote'), unique=True, max_length=3, null=False, blank=False)
-    area_total = models.DecimalField(
-        _('area total'), null=False, blank=False,
-        decimal_places=2, max_digits=5, default=0.0)
+    # area_total = models.DecimalField(
+    #     _('area total'), null=False, blank=False,
+    #     decimal_places=2, max_digits=5, default=0.0)
     estado = models.BooleanField(default=True)
 
     class Meta:

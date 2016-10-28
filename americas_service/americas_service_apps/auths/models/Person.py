@@ -23,10 +23,10 @@ class Person(models.Model):
 
     genero = models.CharField(max_length=40, choices=GENRE_CHOICES)
 
-    tipo_documento = models.ForeignKey(
-        DocumentoIdentidad, null=False, blank=False)
-    documento = models.CharField(
-        capfirst(_('identificacion')), max_length=8, unique=True,
+    # tipo_documento = models.ForeignKey(
+    #     DocumentoIdentidad, null=False, blank=False)
+    documento_identidad = models.CharField(
+        capfirst(_('DNI')), max_length=8, unique=True,
         null=False, blank=False,
         help_text=_('documento nacional de identidad'),
     )  # extend person documents in DocumentPersonType
@@ -90,4 +90,4 @@ class Person(models.Model):
     def __str__(self):
         return '%s %s (%s)' % (self.first_name,
                                self.last_name,
-                               self.documento)
+                               self.documento_identidad)
