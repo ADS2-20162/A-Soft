@@ -9,7 +9,7 @@ class Debe(models.Model):
 
     class Meta:
         verbose_name = "Debe"
-        verbose_name_plural = "Debes"
+        verbose_name_plural = "Lista de DEBE"
 
     def __str__(self):
         return '%s' % (self.glosa_debe)

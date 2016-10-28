@@ -1,5 +1,5 @@
 from django.db import models
-from americas_service_apps.utils.choices.Global import SELECT_SN_CHOICES
+# from americas_service_apps.utils.choices.Global import SELECT_SN_CHOICES
 from .ConceptoCobranza import ConceptoCobranza
 # from .Mora import Mora
 
@@ -11,7 +11,7 @@ class RubroCobranza(models.Model):
         max_length=100, unique=True, null=False, blank=False)
     importe = models.DecimalField(
         decimal_places=2, max_digits=5, null=False, blank=False)
-    con_mora = models.CharField(max_length=2, choices=SELECT_SN_CHOICES)
+    con_mora = models.BooleanField(default=False)
     mora = models.DecimalField(
         decimal_places=2, max_digits=5, null=True, blank=True, default=0.0)
     detalle = models.TextField(max_length=500, null=True, blank=True)

@@ -1,16 +1,16 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from americas_service_apps.socio.models.Socio import Socio
-from americas_service_apps.asociacion.models.RelacionManzana import RelacionManzana
+from americas_service_apps.asociacion.models.InformacionLote import InformacionLote
 
 
 class SocioLote(models.Model):
 
     socio = models.ForeignKey(Socio)
-    socio_lote = models.OneToOneField(RelacionManzana)
+    lote = models.OneToOneField(InformacionLote)
 
-    area_total = models.DecimalField(
-        null=False, blank=False, decimal_places=2, max_digits=5, default=0.0)
+    # area_lote = models.DecimalField(
+    #     null=False, blank=False, decimal_places=2, max_digits=5, default=0.0)
 
     class Meta:
         verbose_name = "SocioLote"
@@ -20,5 +20,5 @@ class SocioLote(models.Model):
         return '%s %s Mz-%s L-%s' % (
             self.socio.persona.first_name,
             self.socio.persona.documento_identidad,
-            self.socio_lote.manzana,
-            self.socio_lote.lote)
+            self.lote.informacion_manzana_lote,
+            self.lote.area_lote)

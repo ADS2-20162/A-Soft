@@ -3,7 +3,7 @@ from .Manzana import Manzana
 from .Lote import Lote
 
 
-class RelacionManzana(models.Model):
+class RelacionManzanaLote(models.Model):
 
     # manzana = models.OneToOneField(Manzana)
     manzana = models.ForeignKey(Manzana)
@@ -11,8 +11,8 @@ class RelacionManzana(models.Model):
     lote = models.OneToOneField(Lote)
 
     class Meta:
-        verbose_name = "RelacionManzana"
-        verbose_name_plural = "RelacionManzanas"
+        verbose_name = "RelacionManzanaLote"
+        verbose_name_plural = "RelacionManzanaLotes"
 
     def __str__(self):
-        return 'Mz-%s Lote - %s' % (self.manzana, self.lote)
+        return 'MZ%s-L%s' % (self.manzana, self.lote)
