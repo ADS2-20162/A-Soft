@@ -9,7 +9,7 @@ class Asistencia(models.Model):
     evento = models.ForeignKey(Evento)
     socio = models.ForeignKey(SocioLote)
     dni_representante = models.CharField(max_length=8, null=True, blank=True)
-    fecha = models.DateTimeField()
+    fecha = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = "Asistencia"

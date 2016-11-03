@@ -21,7 +21,8 @@ LOCAL_APPS = [
     'americas_service_apps.asociacion',
     'americas_service_apps.cobranza',
     # App de Yerson
-    'americas_service_apps.eventos'
+    'americas_service_apps.eventos',
+    'americas_service_apps.pagos',
 ]
 
 THIRD_PARTY_APPS = [
