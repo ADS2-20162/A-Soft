@@ -13,8 +13,8 @@ class Manzana(models.Model):
     """
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 
-    manzana = models.ForeignKey(
-        'self', related_name='iteracion_manzana', null=True, blank=True)
+    # manzana = models.ForeignKey(
+    #     'self', related_name='iteracion_manzana', null=True, blank=True)
     # item = models.IntegerField(default=1, null=False, blank=False)
     # manzana_id = models.AutoField(primary_key=True)
     manzana = models.CharField(

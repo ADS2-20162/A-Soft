@@ -23,6 +23,4 @@ class InformacionLote(models.Model):
         verbose_name_plural = "InformacionLotes"
 
     def __str__(self):
-        return '%s Area del Lote: %s' % (
-            self.informacion_lote,
-            self.area_lote)
+        return 'Area del Lote: %s' % (self.area_lote)

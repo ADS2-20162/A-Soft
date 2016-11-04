@@ -17,7 +17,7 @@ class Lote(models.Model):
 
     # iteracion_lote = models.ForeignKey(
     #     'self', related_name='asociacion', null=True, blank=True)
-    item = models.IntegerField(default=1, null=False, blank=False)
+    # item = models.IntegerField(default=1, null=False, blank=False)
     lote = models.CharField(
         _('ingrese lote'), unique=True, max_length=3, null=False, blank=False)
     # area_total = models.DecimalField(
