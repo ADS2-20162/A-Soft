@@ -1,5 +1,5 @@
 from django.db import models
-from .RubroCobranza import RubroCobranza
+from americas_service_apps.cobranza.models.RubroCobranza import RubroCobranza
 
 
 class Debe(models.Model):
@@ -8,8 +8,8 @@ class Debe(models.Model):
     glosa_debe = models.OneToOneField(RubroCobranza)
 
     class Meta:
-        verbose_name = "Debe"
-        verbose_name_plural = "Lista de DEBE"
+        verbose_name = "DEBE"
+        verbose_name_plural = "DEBE"
 
     def __str__(self):
         return '%s' % (self.glosa_debe)

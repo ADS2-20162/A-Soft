@@ -4,14 +4,16 @@ from django.contrib import admin
 # Register your models here.
 from .models.RubroCobranza import RubroCobranza
 from .models.ConceptoCobranza import ConceptoCobranza
-from .models.Debe import Debe
+# from .models.Debe import Debe
 from .models.Cuota import Cuota
 from .models.CuotaSocio import CuotaSocio
-from .models.ValidarPago import ValidarPago
+from .models.Categoria import Categoria
+# from .models.ValidarPago import ValidarPago
 
 admin.site.register(RubroCobranza)
 admin.site.register(ConceptoCobranza)
-admin.site.register(Debe)
+# admin.site.register(Debe)
 admin.site.register(Cuota)
 admin.site.register(CuotaSocio)
-admin.site.register(ValidarPago)
+# admin.site.register(ValidarPago)
+admin.site.register(Categoria)

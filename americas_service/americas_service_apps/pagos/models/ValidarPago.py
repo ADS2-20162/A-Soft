@@ -1,5 +1,5 @@
 from django.db import models
-from .CuotaSocio import CuotaSocio
+from americas_service_apps.cobranza.models.CuotaSocio import CuotaSocio
 from americas_service_apps.asociacion.models.CuentaBanco import CuentaBanco
 
 

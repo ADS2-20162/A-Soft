@@ -11,7 +11,7 @@ class InformacionLote(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 
-    informacion_lote = models.OneToOneField(Lote)
+    lote = models.OneToOneField(Lote)
     area_lote = models.DecimalField(
         _('area total'), null=False, blank=False,
         decimal_places=2, max_digits=5, default=0.0)
@@ -23,4 +23,4 @@ class InformacionLote(models.Model):
         verbose_name_plural = "InformacionLotes"
 
     def __str__(self):
-        return 'Area del Lote: %s' % (self.area_lote)
+        return 'Lote: %s Area: %s' % (self.lote, self.area_lote)
