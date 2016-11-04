@@ -13,7 +13,7 @@ class SocioLote(models.Model):
     area_construida = models.DecimalField(
         max_digits=5, decimal_places=2, default=0.0)
     estado_inmueble = models.CharField(
-        choices=ESTADO_INMUEBLE_CHOICES, max_length=5, null=True, blank=True)
+        choices=ESTADO_INMUEBLE_CHOICES, max_length=30, null=True, blank=True)
     observaciones = models.TextField(max_length=500, blank=True, null=True)
     estado = models.BooleanField(default=True)
     # area_lote = models.DecimalField(

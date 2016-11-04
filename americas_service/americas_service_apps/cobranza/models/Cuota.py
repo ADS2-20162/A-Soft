@@ -5,18 +5,19 @@ from americas_service_apps.asociacion.models.InformacionLote import InformacionL
 
 class Cuota(models.Model):
 
-    lote = models.ForeignKey(InformacionLote)
+    lote = models.OneToOneField(InformacionLote)
     rubro_cobranza = models.ForeignKey(RubroCobranza)
-    valor = models.DecimalField(decimal_places=2, max_digits=5, default=0.0)
-    area_lote = models.DecimalField(
-        decimal_places=2, max_digits=5, default=0.0)
+    # valor = models.DecimalField(
+    #     decimal_places=2, max_digits=5, default=0.0)
+    # area_lote = models.DecimalField(
+    #     decimal_places=2, max_digits=5, default=0.0)
     cuota = models.DecimalField(
-        decimal_places=2, max_digits=5, default=0.0)
+        decimal_places=2, max_digits=10, null=True, blank=True)
 
     def save(self, *args, **kwargs):
-        self.valor = self.rubro_cobranza.importe
+        self.importe = self.rubro_cobranza.importe
         self.area_lote = self.lote.area_lote
-        self.cuota = self.valor * self.area_lote
+        self.cuota = self.area_lote * self.importe
         return super(Cuota, self).save(*args, **kwargs)
 
     class Meta:
@@ -25,4 +26,4 @@ class Cuota(models.Model):
 
     def __str__(self):
         # return('{0}'.format(self.valor))
-        return '%s %s Cuota: %s' % (self.lote, self.valor, self.cuota)
+        return '%s %s' % (self.lote, self.cuota)
