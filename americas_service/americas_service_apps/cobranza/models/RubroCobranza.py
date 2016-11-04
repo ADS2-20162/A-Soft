@@ -16,7 +16,7 @@ class RubroCobranza(models.Model):
         decimal_places=2, max_digits=5, null=True, blank=True, default=0.0)
     detalle = models.TextField(max_length=500, null=True, blank=True)
     fecha_inicio = models.DateField(null=False, blank=False)
-    fecha_fin = models.DateField(null=False, blank=False)
+    dias = models.IntegerField(null=False, blank=False)
 
     class Meta:
         verbose_name = "Rubro de cobranza"
