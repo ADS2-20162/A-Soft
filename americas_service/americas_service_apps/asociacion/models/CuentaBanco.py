@@ -16,8 +16,8 @@ class CuentaBanco(models.Model):
         max_length=50, unique=True, null=False, blank=False)
 
     class Meta:
-        verbose_name = "CuentaBanco"
-        verbose_name_plural = "CuentaBancos"
+        verbose_name = "Cuenta de banco"
+        verbose_name_plural = "Cuentas de bancos"
 
     def __str__(self):
         return '%s - (%s)' % (self.entidad_bancaria, self.numero_cuenta)

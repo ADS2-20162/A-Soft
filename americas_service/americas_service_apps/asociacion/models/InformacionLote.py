@@ -19,8 +19,8 @@ class InformacionLote(models.Model):
     estado = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "InformacionLote"
-        verbose_name_plural = "InformacionLotes"
+        verbose_name = "Informacion de lote"
+        verbose_name_plural = "Informacion de lotes"
 
     def __str__(self):
         return 'Lote: %s Area: %s' % (self.lote, self.area_lote)

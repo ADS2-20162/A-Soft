@@ -20,8 +20,8 @@ class SocioLote(models.Model):
     #     null=False, blank=False, decimal_places=2, max_digits=5, default=0.0)
 
     class Meta:
-        verbose_name = "SocioLote"
-        verbose_name_plural = "SocioLotes"
+        verbose_name = "Relacion de socio a lote"
+        verbose_name_plural = "Relacion de socio a lotes"
 
     def __str__(self):
         return '%s %s %s' % (

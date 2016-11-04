@@ -9,8 +9,8 @@ class ConceptoCobranza(models.Model):
     estado = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = "ConceptoCobranza"
-        verbose_name_plural = "ConceptoCobranzas"
+        verbose_name = "Concepto de cobranza"
+        verbose_name_plural = "Conceptos de cobranzas"
 
     def __str__(self):
         return 'id - %s, Concepto - %s' % (self.concepto_id, self.concepto_cobranza)

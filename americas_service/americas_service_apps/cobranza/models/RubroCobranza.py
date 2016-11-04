@@ -19,8 +19,8 @@ class RubroCobranza(models.Model):
     fecha_fin = models.DateField(null=False, blank=False)
 
     class Meta:
-        verbose_name = "RubroCobranza"
-        verbose_name_plural = "RubroCobranzas"
+        verbose_name = "Rubro de cobranza"
+        verbose_name_plural = "Rubros de cobranza"
 
     def __str__(self):
         return 'Concepto - %s, Rubro %s, Importe S/ - %s, Mora - S/ %s' % (
