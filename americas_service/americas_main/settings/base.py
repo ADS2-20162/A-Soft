@@ -98,8 +98,8 @@ WSGI_APPLICATION = 'americas_main.wsgi.application'
 
 AUTH_USER_MODEL = 'auths.User'  # added
 
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'es'
+TIME_ZONE = 'America/Lima'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True

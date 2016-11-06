@@ -20,6 +20,9 @@ class Lote(models.Model):
     # item = models.IntegerField(default=1, null=False, blank=False)
     lote = models.CharField(
         _('ingrese lote'), unique=True, max_length=3, null=False, blank=False)
+    area_lote = models.DecimalField(
+        _('area total'), null=False, blank=False,
+        decimal_places=2, max_digits=5, default=0.0)
     # area_total = models.DecimalField(
     #     _('area total'), null=False, blank=False,
     #     decimal_places=2, max_digits=5, default=0.0)

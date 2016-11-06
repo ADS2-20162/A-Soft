@@ -4,14 +4,14 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 # models
-from .Lote import Lote
+# from .Lote import Lote
 
 
 class InformacionLote(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 
-    lote = models.OneToOneField(Lote)
+    # lote = models.OneToOneField(Lote)
     area_lote = models.DecimalField(
         _('area total'), null=False, blank=False,
         decimal_places=2, max_digits=5, default=0.0)

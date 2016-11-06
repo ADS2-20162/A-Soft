@@ -18,10 +18,7 @@ class Asociacion(models.Model):
                               max_length=100, null=False)
     denominacion = models.CharField(
         _('denominacion asociacion'), max_length=150, null=True)
-    cuenta_banco = models.ForeignKey(CuentaBanco)
-    # presidente = models.ForeignKey(Socio)
-    # secretario = models.ForeignKey(Socio)
-    # tesorero = models.ForeignKey(Socio)
+    cuenta_banco = models.OneToOneField(CuentaBanco)
     website = models.URLField(null=True, blank=True)
     logo = models.ImageField(null=False, blank=True)
     created_at = models.DateTimeField(_('created at'), auto_now_add=True)
