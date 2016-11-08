@@ -2,7 +2,7 @@ from uuid import uuid4
 # from datetime import datetime
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from .CuentaBanco import CuentaBanco
+from .cuenta_banco import CuentaBanco
 # from django.utils.text import capfirst, get_text_list
 
 

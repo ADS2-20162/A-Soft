@@ -1,7 +1,7 @@
 from django.db import models
 
-from americas_service_apps.asociacion.models.SocioLote import SocioLote
-from .Evento import Evento
+from americas_service_apps.asociacion.models.socio_lote import SocioLote
+from .evento import Evento
 
 
 class Asistencia(models.Model):

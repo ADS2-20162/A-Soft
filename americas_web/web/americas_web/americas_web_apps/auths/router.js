@@ -1,8 +1,8 @@
 app
 
-    //==================================
-    // auths routers
-    //==================================
+//==================================
+// auths routers
+//==================================
     .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
@@ -58,22 +58,22 @@ app
         template: '<div ui-view ></div>'
     })
 
-     .state("auths.hierarchy.hierarchy_type", {
+    .state("auths.hierarchy.hierarchy_type", {
         url: "/hierarchy_type",
         data: { section: 'Hierarchys', page: 'Hierarchy Type' },
         templateUrl: "americas_web_apps/auths/views/hierarchy_type/index.html"
     })
 
     .state("auths.system.permission", {
-        url: "/permission",
-        data: { section: 'System', page: 'Permisos' },
-        templateUrl: "americas_web_apps/auths/views/permission/index.html"
-    })
-    .state("auths.system.contenttype", {
-        url: "/contenttype",
-        data: { section: 'System', page: 'Aplicaciones' },
-        templateUrl: "americas_web_apps/auths/views/contenttype/index.html"
-    })
+            url: "/permission",
+            data: { section: 'System', page: 'Permisos' },
+            templateUrl: "americas_web_apps/auths/views/permission/index.html"
+        })
+        .state("auths.system.contenttype", {
+            url: "/contenttype",
+            data: { section: 'System', page: 'Aplicaciones' },
+            templateUrl: "americas_web_apps/auths/views/contenttype/index.html"
+        })
 
     //==================================
     // url Menú

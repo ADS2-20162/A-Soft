@@ -1,6 +1,6 @@
 from django.db import models
-from americas_service_apps.asociacion.models.SocioLote import SocioLote
-from americas_service_apps.cobranza.models.Cuota import Cuota
+from americas_service_apps.asociacion.models.socio_lote import SocioLote
+from americas_service_apps.cobranza.models.cuota import Cuota
 
 
 class CuotaSocio(models.Model):

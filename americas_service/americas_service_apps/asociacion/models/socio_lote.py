@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from .Socio import Socio
-from .Lote import Lote
+from .socio import Socio
+from .lote import Lote
 from americas_service_apps.asociacion.choices.enums import ESTADO_INMUEBLE_CHOICES
 
 

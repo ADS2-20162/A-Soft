@@ -1,5 +1,5 @@
 from django.db import models
-from americas_service_apps.cobranza.models.RubroCobranza import RubroCobranza
+from americas_service_apps.cobranza.models.rubro_cobranza import RubroCobranza
 
 
 class Debe(models.Model):

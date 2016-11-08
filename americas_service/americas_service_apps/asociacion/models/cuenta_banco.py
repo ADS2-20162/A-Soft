@@ -11,7 +11,7 @@ from django.db import models
 
 class CuentaBanco(models.Model):
 
-    #     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    # id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
 
     # entidad_bancaria = models.CharField(max_length=100, choices=BANCO_CHOICES)
     # entidad_bancaria = models.ForeignKey(Banco)

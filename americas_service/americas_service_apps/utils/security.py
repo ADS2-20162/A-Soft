@@ -39,5 +39,6 @@ def log_params(request):
     return {
         'path': request.get_full_path(),
         'ip': request.META['REMOTE_ADDR'],
-        'user': request.user
+        'user': request.user,
+        'method': request.method
     }

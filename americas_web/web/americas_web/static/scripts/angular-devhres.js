@@ -615,9 +615,9 @@ ngDevhres.directive("tableResponsive", function($compile, $filter) {
                 for (var i = 0; i < headers.length; i++) {
                     var current = headers[i];
                     var data_order = current.getAttribute("data-order");
-                    if (data_order){
-                        console.log('data_order:'+data_order);
-                        var x=1;
+                    if (data_order) {
+                        console.log('data_order:' + data_order);
+                        var x = 1;
                         angular.element(current).append('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" aria-label="title" ng-click="elemAsc()"> <path style="fill: black" d="M11 7h-6l3-4z"/> <path style="fill: black" d="M5 9h6l-3 4z"/> </svg>');
                     }
 
@@ -634,9 +634,9 @@ ngDevhres.directive("tableResponsive", function($compile, $filter) {
                                 header_text.push(current.textContent + " " + corresponding_th.textContent + ":");
                                 data_order = corresponding_th.getAttribute("data-order");
 
-                                if (data_order){
-                                    console.log('data_order s:'+data_order);
-                                    var x=1;
+                                if (data_order) {
+                                    console.log('data_order s:' + data_order);
+                                    var x = 1;
                                     angular.element(corresponding_th).append('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" aria-label="title" ng-click="elemAsc()"> <path style="fill: black" d="M11 7h-6l3-4z"/> <path style="fill: black" d="M5 9h6l-3 4z"/> </svg>');
                                 }
 

@@ -2,13 +2,13 @@ from django.contrib import admin
 # from django.contrib.contenttypes.models import ContentType
 
 # Register your models here.
-from .models.Asociacion import Asociacion
-from .models.Lote import Lote
-from .models.Manzana import Manzana
-from .models.CuentaBanco import CuentaBanco
+from .models.asociacion import Asociacion
+from .models.lote import Lote
+from .models.manzana import Manzana
+from .models.cuenta_banco import CuentaBanco
 # from .models.InformacionLote import InformacionLote
-from .models.Socio import Socio
-from .models.SocioLote import SocioLote
+from .models.socio import Socio
+from .models.socio_lote import SocioLote
 # from .models.Banco import Banco
 # from .models.TipoCuenta import TipoCuenta
 

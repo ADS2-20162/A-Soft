@@ -56,17 +56,17 @@ class Menu(models.Model):
     description = models.TextField(
         _('description'), null=True, blank=True
     )
+    router_json = models.TextField(
+        _('router json'), null=True, blank=True
+    )
     permission = models.ForeignKey(
         Permission, verbose_name=_('permission'), null=True, blank=True,
         help_text=_(
             'NULL if is root'
         ),
     )
-    parent = models.ForeignKey(
-        'self',  related_name='childrens', verbose_name=_('parent'),
-        null=True, blank=True
-    )
-
+    parent = models.ForeignKey('self',  related_name='childrens',
+                               verbose_name=_('parent'), null=True, blank=True)
     created_at = models.DateTimeField(
         _('created at'), auto_now_add=True
     )

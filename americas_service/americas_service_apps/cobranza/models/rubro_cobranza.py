@@ -1,6 +1,6 @@
 from django.db import models
 # from americas_service_apps.utils.choices.Global import SELECT_SN_CHOICES
-from .ConceptoCobranza import ConceptoCobranza
+from .concepto_cobranza import ConceptoCobranza
 # from .Mora import Mora
 
 

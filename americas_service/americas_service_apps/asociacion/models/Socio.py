@@ -1,5 +1,5 @@
 from django.db import models
-from americas_service_apps.auths.models.Person import Person
+from americas_service_apps.auths.models.person import Person
 from americas_service_apps.auths.choices.enums import ESTADO_CIVIL_CHOICES
 from americas_service_apps.auths.choices.enums import SELECT_SN_CHOICES
 # from americas_service_apps.socio.models.Email import Email

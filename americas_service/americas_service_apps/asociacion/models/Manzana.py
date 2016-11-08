@@ -17,8 +17,8 @@ class Manzana(models.Model):
     #     'self', related_name='iteracion_manzana', null=True, blank=True)
     # item = models.IntegerField(default=1, null=False, blank=False)
     # manzana_id = models.AutoField(primary_key=True)
-    manzana = models.CharField(
-        _('ingrese manzana'), unique=True, max_length=3, null=False, blank=False)
+    manzana = models.CharField(_('ingrese manzana'), unique=True,
+                               max_length=3, null=False, blank=False)
     # numero_lotes = models.PositiveSmallIntegerField(
     #     _('numero lotes'), default=1, blank=False, null=False)
     # arreglo_manzana = models.ForeignKey(ArregloManzana)

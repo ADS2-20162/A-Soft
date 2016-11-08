@@ -5,8 +5,8 @@ from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.utils.translation import ugettext_lazy as _
 from django.utils.text import capfirst, get_text_list
 # models
-from americas_service_apps.auths.models.HierarchyType import HierarchyType
-from americas_service_apps.auths.models.User import User
+from americas_service_apps.auths.models.hierarchy_type import HierarchyType
+from americas_service_apps.auths.models.user import User
 
 
 class Hierarchy(models.Model):
@@ -37,7 +37,6 @@ class Hierarchy(models.Model):
     is_active = models.BooleanField(
         capfirst(_('active')), default=True
     )
-
     parent = models.ForeignKey(
         'self', related_name='childrens', null=True, blank=True
     )
@@ -47,7 +46,6 @@ class Hierarchy(models.Model):
     immediate_parent = models.ForeignKey(
         'self', related_name='immediate_childrens', null=True, blank=True
     )
-
     created_at = models.DateTimeField(
         _('created at'), auto_now_add=True
     )

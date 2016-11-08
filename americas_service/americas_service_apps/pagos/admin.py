@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models.Pago import Pago
-from .models.Periodo import Periodo
-from .models.ValidarPago import ValidarPago
+from .models.pago import Pago
+from .models.periodo import Periodo
+from .models.validar_pago import ValidarPago
 
 admin.site.register(Pago)
 admin.site.register(Periodo)

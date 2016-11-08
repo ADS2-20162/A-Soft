@@ -1,11 +1,11 @@
 from django.db import models
-from .RubroCobranza import RubroCobranza
-from americas_service_apps.asociacion.models.InformacionLote import InformacionLote
+from .rubro_cobranza import RubroCobranza
+# from americas_service_apps.asociacion.models.InformacionLote import InformacionLote
 
 
 class Cuota(models.Model):
 
-    lote = models.OneToOneField(InformacionLote)
+    # lote = models.OneToOneField(InformacionLote)
     rubro_cobranza = models.ForeignKey(RubroCobranza)
     # valor = models.DecimalField(
     #     decimal_places=2, max_digits=5, default=0.0)

@@ -69,26 +69,26 @@ app
     // test4
     //==================================
     .state("ui.test4", {
-        url: "/test4",
-        data: { section: 'UI', page: 'Test 4' },
-        templateUrl: "americas_web_apps/ui/views/tests/test4.html"
-    })
-    //==================================
-    // test5pagination
-    //==================================
-    .state("ui.test5", {
-        url: "/test5",
-        data: { section: 'UI', page: 'Test 5' },
-        templateUrl: "americas_web_apps/ui/views/tests/test5pagination.html"
-    })
-    //==================================
-    // test6directivas
-    //==================================
-    .state("ui.dir", {
-        url: "/dir",
-        data: { section: 'UI', page: 'Test 6 directivas' },
-        templateUrl: "americas_web_apps/ui/views/tests/test6dir.html"
-    })
+            url: "/test4",
+            data: { section: 'UI', page: 'Test 4' },
+            templateUrl: "americas_web_apps/ui/views/tests/test4.html"
+        })
+        //==================================
+        // test5pagination
+        //==================================
+        .state("ui.test5", {
+            url: "/test5",
+            data: { section: 'UI', page: 'Test 5' },
+            templateUrl: "americas_web_apps/ui/views/tests/test5pagination.html"
+        })
+        //==================================
+        // test6directivas
+        //==================================
+        .state("ui.dir", {
+            url: "/dir",
+            data: { section: 'UI', page: 'Test 6 directivas' },
+            templateUrl: "americas_web_apps/ui/views/tests/test6dir.html"
+        })
 
     ;
 });

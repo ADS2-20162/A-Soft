@@ -25,8 +25,7 @@ class Person(models.Model):
     # tipo_documento = models.ForeignKey(
     #     DocumentoIdentidad, null=False, blank=False)
     documento_identidad = models.CharField(
-        capfirst(_('DNI')), max_length=8, unique=True,
-        null=False, blank=False,
+        capfirst(_('DNI')), max_length=8, unique=True, null=False, blank=False,
         help_text=_('documento nacional de identidad'),
     )  # extend person documents in DocumentPersonType
 
@@ -55,7 +54,6 @@ class Person(models.Model):
             'apellido materno'
         ),
     )
-
     birth_date = models.DateField(
         _('birth date'), null=True, blank=True
     )

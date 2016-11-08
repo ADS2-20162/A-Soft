@@ -1,23 +1,22 @@
 {
-  "name": "web",
-  "version": "1.0.0",
-  "description": "proyecto residencial las americas",
-  "main": "gulpfile.js",
-  "scripts": {
-    "start": "nodemon web/gulpfile.js"
-  },
-  "keywords": [
-    "gulp"
-  ],
-  "author": "Franklin & Yerson",
-  "license": "MIT",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-connect": "^5.0.0",
-    "gulp-uglify": "^2.0.0",
-    "nodemon": "^1.10.2"
-  },
-  "devDependencies": {
-  }
+    "name": "web",
+    "version": "1.0.0",
+    "description": "proyecto residencial las americas",
+    "main": "gulpfile.js",
+    "scripts": {
+        "start": "nodemon web/gulpfile.js"
+    },
+    "keywords": [
+        "gulp"
+    ],
+    "author": "Franklin & Yerson",
+    "license": "MIT",
+    "dependencies": {
+        "gulp": "^3.9.1",
+        "gulp-concat": "^2.6.0",
+        "gulp-connect": "^5.0.0",
+        "gulp-uglify": "^2.0.0",
+        "nodemon": "^1.10.2"
+    },
+    "devDependencies": {}
 }

@@ -1,6 +1,6 @@
 from django.db import models
-from americas_service_apps.eventos.models.Evento import Evento
-from .Periodo import Periodo
+from americas_service_apps.eventos.models.evento import Evento
+from .periodo import Periodo
 
 
 class Pago(models.Model):

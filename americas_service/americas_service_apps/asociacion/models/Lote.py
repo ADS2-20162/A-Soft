@@ -1,7 +1,7 @@
 from uuid import uuid4
 # from datetime import datetime, timedelta
 from django.db import models
-from .Manzana import Manzana
+from .manzana import Manzana
 from django.utils.translation import ugettext_lazy as _
 # models
 # from .ArregloLote import ArregloLote

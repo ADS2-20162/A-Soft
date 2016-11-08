@@ -7,9 +7,45 @@ from django.utils.text import capfirst, get_text_list
 # enums
 
 # models
-from americas_service_apps.auths.models.Person import Person
+from americas_service_apps.auths.models.person import Person
 # managers
-from americas_service_apps.auths.managers.UserManager import UserManager
+# from americas_service_apps.auths.managers.UserManager import UserManager
+from django.contrib.auth.models import UserManager
+from django.conf import settings
+
+
+class UserQuerySet(models.query.QuerySet):
+
+    """ """
+
+    def with_status(self):
+        return self.extra(
+            select={
+                'status': '''SELECT
+                status FROM (
+                SELECT * FROM sad_user_status  ORDER BY id %(desc)s
+                ) AS estado
+                WHERE  estado.user_id = auth_user.id
+                GROUP BY estado.user_id
+                ''' % {'desc': settings.DESC}  # MySQL es DESC
+            },
+        )
+
+# http://agiliq.com/books/djangodesignpatterns/models.html
+
+
+class UserManager(UserManager):  # models.Manager
+
+    """ """
+
+    def get_queryset(self):
+        return UserQuerySet(self.model, using=self._db)
+
+    def with_status(self):
+        return self.get_queryset().with_status()
+
+    def get_by_natural_key(self, username):
+        return self.get(username=username)
 
 
 class User(AbstractUser):

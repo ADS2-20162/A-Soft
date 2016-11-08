@@ -13,4 +13,6 @@ class ConceptoCobranza(models.Model):
         verbose_name_plural = "Conceptos de cobranzas"
 
     def __str__(self):
-        return 'id - %s, Concepto - %s' % (self.concepto_id, self.concepto_cobranza)
+        return 'id - %s, Concepto - %s' % (
+            self.concepto_id,
+            self.concepto_cobranza)

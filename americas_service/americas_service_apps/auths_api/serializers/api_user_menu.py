@@ -18,10 +18,11 @@ from americas_service_apps.utils.permissions import ModelPermission
 from django.db.models import Q
 
 from django.contrib.auth.models import Group, Permission
-from americas_service_apps.auths.models.Hierarchy import Hierarchy
-from americas_service_apps.auths.models.Menu import Menu
-from americas_service_apps.auths.models.UserHierarchyGroup import UserHierarchyGroup
-from americas_service_apps.auths.models.UserHierarchyPermission import \
+from americas_service_apps.auths.models.hierarchy import Hierarchy
+from americas_service_apps.auths.models.menu import Menu
+from americas_service_apps.auths.models.user_hierarchy_group import \
+    UserHierarchyGroup
+from americas_service_apps.auths.models.user_hierarchy_permission import \
     UserHierarchyPermission
 from rest_framework import serializers
 from rest_framework.renderers import JSONRenderer

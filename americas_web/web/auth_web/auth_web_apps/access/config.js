@@ -1,7 +1,7 @@
 ﻿var authsUrl = 'http://localhost:9001/api/auths/';
 
 var config = {
-	authsUrl: authsUrl,
+    authsUrl: authsUrl,
 };
 
 app.value('config_access', config);

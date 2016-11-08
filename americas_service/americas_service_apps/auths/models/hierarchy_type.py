@@ -18,9 +18,7 @@ class HierarchyType(models.Model):
         max_length=50, choices=HIERARCHY_TYPE_CHOICES
     )
 
-    name = models.CharField(
-        capfirst(_('name')),  max_length=60
-    )
+    name = models.CharField(capfirst(_('name')), max_length=60)
 
     level = models.BigIntegerField(
         capfirst(_('level')),

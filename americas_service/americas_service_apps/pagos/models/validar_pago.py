@@ -1,6 +1,6 @@
 from django.db import models
-from americas_service_apps.cobranza.models.CuotaSocio import CuotaSocio
-from americas_service_apps.asociacion.models.CuentaBanco import CuentaBanco
+from americas_service_apps.cobranza.models.cuota_socio import CuotaSocio
+from americas_service_apps.asociacion.models.cuenta_banco import CuentaBanco
 
 
 class ValidarPago(models.Model):

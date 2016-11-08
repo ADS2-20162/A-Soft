@@ -1,7 +1,6 @@
 <nav>
     <ul class="nav">
         <div ng-repeat="section in menu.sections">
-            
             <div ng-repeat="menu in section.menu">
                 <li ng-if="menu.type === 'toggle'" ng-class="{'active toggled':$state.includes('{{menu.state}}')}">
                     <a md-ink-ripple toggle-submenu>
@@ -29,7 +28,6 @@
                 </a>
             </li>
         </div>
-
         <!--
         <div>
             <li class="nav-header m-v-sm hidden-folded">
@@ -110,7 +108,6 @@
         </li>
         </li>
         -->
-
     </ul>
 </nav>
 <!--

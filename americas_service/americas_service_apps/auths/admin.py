@@ -4,13 +4,15 @@ from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 
 # Register your models here.
-from americas_service_apps.auths.models.Person import Person
-from americas_service_apps.auths.models.User import User
-from americas_service_apps.auths.models.HierarchyType import HierarchyType
-from americas_service_apps.auths.models.Hierarchy import Hierarchy
-from americas_service_apps.auths.models.Menu import Menu
-from americas_service_apps.auths.models.UserHierarchyGroup import UserHierarchyGroup
-from americas_service_apps.auths.models.UserHierarchyPermission import UserHierarchyPermission
+from americas_service_apps.auths.models.person import Person
+from americas_service_apps.auths.models.user import User
+from americas_service_apps.auths.models.hierarchy_type import HierarchyType
+from americas_service_apps.auths.models.hierarchy import Hierarchy
+from americas_service_apps.auths.models.menu import Menu
+from americas_service_apps.auths.models.user_hierarchy_group import \
+    UserHierarchyGroup
+from americas_service_apps.auths.models.user_hierarchy_permission import \
+    UserHierarchyPermission
 
 
 admin.site.register(ContentType)
@@ -149,4 +151,5 @@ class MyUserAdmin(UserAdmin):
         return super(MyUserAdmin, self).formfield_for_choice_field(db_field,
             request, **kwargs)
     '''
+
 admin.site.register(User, MyUserAdmin)

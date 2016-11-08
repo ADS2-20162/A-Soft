@@ -13,7 +13,7 @@ app.factory('authInterceptorService', function($injector, $q, localStorageServic
 
     var _responseError = function(rejection) {
         var loggedIn = false;
-        
+
         var authData = localStorageService.get('authorizationData');
         if (authData) {
             loggedIn = true;

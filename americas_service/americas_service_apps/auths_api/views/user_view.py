@@ -17,7 +17,7 @@ from rest_framework import status
 from americas_service_apps.utils.security import log_params
 from americas_service_apps.utils.permissions import ModelPermission
 
-from americas_service_apps.auths.models.User import User
+from americas_service_apps.auths.models.user import User
 # Get an instance of a logger
 log = logging.getLogger(__name__)
 
@@ -26,6 +26,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
+        fields = '__all__'
 
 
 class UserViewSet(viewsets.ModelViewSet):

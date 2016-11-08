@@ -1,10 +1,10 @@
 <style type="text/css">
-  .clearfix:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
-   clear: both;
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
 }
 
 .container {
@@ -47,36 +47,20 @@
 .item .price {
     font-weight: bold;
 }
-
-
 </style>
-
-
 <div ng-controller="PagCtrl">
-
-
-
-
-
-
     <button ng-click="updateProducts()">Regenerate Products List</button>
-
     <div class="navigation">
         <div class="items-count">{{products.firstItemNumber}} - {{products.lastItemNumber}} of {{products.totalItemCount}} items</div>
-
-
-
         <div class="pages clearfix" ng-show="products.totalItemCount > products.itemsPerPage">
             <button ng-disabled="products.first" ng-click="products.prev()">&lt; Prev</button>
             <ul clearfix>
                 <li ng-show="products.firstPageInRange != 1" ng-click="products.setPage(products.firstPageInRange - 1)">
                     ...
                 </li>
-    
                 <li ng-repeat="page in products.pagesInRange" ng-click="products.setPage(page)" ng-class="{active: page == products.current}">
                     {{page}}
                 </li>
-    
                 <li ng-show="products.lastPageInRange != products.pageCount" ng-click="products.setPage(products.lastPageInRange + 1)">
                     ...
                 </li>
@@ -84,16 +68,15 @@
             <button ng-disabled="products.last" ng-click="products.next()">Next &gt;</button>
         </div>
         <div class="sorter">
-            Sort by: 
+            Sort by:
             <select ng-model="sorting">
                 <option value="-Price">Price descending</option>
                 <option value="Price">Price ascending</option>
                 <option value="Name">Name A-Z</option>
                 <option value="-Name">Name Z-A</option>
-            </select> 
+            </select>
         </div>
     </div>
-    
     <div class="items clearfix">
         <div ng-repeat="item in products.items" class="item">
             <div class="image">
@@ -110,10 +93,4 @@
             </div>
         </div>
     </div>
-
-
-
-
 </div>
-
-

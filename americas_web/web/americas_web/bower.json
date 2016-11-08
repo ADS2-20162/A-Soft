@@ -1,37 +1,37 @@
 {
-  "name": "web",
-  "description": "app web",
-  "main": "index.js",
-  "authors": [
-    "Franklin & Yerson"
-  ],
-  "license": "ISC",
-  "keywords": [
-    "django",
-    "angular",
-    "material",
-    "ux"
-  ],
-  "homepage": "index.html",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "angular-animate": "^1.5.8",
-    "angular-aria": "^1.5.8",
-    "angular-local-storage": "^0.5.0",
-    "angular-material-icons": "^0.7.1",
-    "angular-material": "^1.1.1",
-    "angular-messages": "^1.5.8",
-    "angular-sanitize": "^1.5.8",
-    "angular-toastr": "^2.1.1",
-    "angular-ui-router": "^0.3.1",
-    "angular": "^1.5.8",
-    "angularytics": "^0.4.0",
-    "angular-resource": "^1.5.8"
-  }
+    "name": "web",
+    "description": "app web",
+    "main": "index.js",
+    "authors": [
+        "Franklin & Yerson"
+    ],
+    "license": "ISC",
+    "keywords": [
+        "django",
+        "angular",
+        "material",
+        "ux"
+    ],
+    "homepage": "index.html",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular-animate": "^1.5.8",
+        "angular-aria": "^1.5.8",
+        "angular-local-storage": "^0.5.0",
+        "angular-material-icons": "^0.7.1",
+        "angular-material": "^1.1.1",
+        "angular-messages": "^1.5.8",
+        "angular-sanitize": "^1.5.8",
+        "angular-toastr": "^2.1.1",
+        "angular-ui-router": "^0.3.1",
+        "angular": "^1.5.8",
+        "angularytics": "^0.4.0",
+        "angular-resource": "^1.5.8"
+    }
 }

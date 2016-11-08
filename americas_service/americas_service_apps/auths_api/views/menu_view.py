@@ -14,7 +14,7 @@ from americas_service_apps.utils.pagination import ModelPagination
 from americas_service_apps.utils.security import log_params
 from americas_service_apps.utils.permissions import ModelPermission
 
-from americas_service_apps.auths.models.Menu import Menu
+from americas_service_apps.auths.models.menu import Menu
 import logging
 log = logging.getLogger(__name__)
 
@@ -23,6 +23,7 @@ class MenuParentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Menu
+        fields = '__all__'
 
 
 class MenuSerializer(serializers.ModelSerializer):
@@ -32,6 +33,7 @@ class MenuSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Menu
+        fields = '__all__'
         # fields = ('id', 'title', 'parent', 'childrens')
 
 
@@ -50,8 +52,9 @@ class MenuViewSet(ModelPagination, viewsets.ModelViewSet):  # ModelPagination
             print("dni=%s)" % self.request.user.person.identity_num)
         print("==========\n")
         '''
+        log.info('¡Writing in log file!', extra=log_params(self.request))
         all = self.request.query_params.get('all', None)
-        print ('MenuViewSet all=', all)
+        print('MenuViewSet all=', all)
         self.queryset = self.queryset.filter(parent=None)  # si vas a modificar
         return ModelPagination.get_queryset(self)
         # return self.queryset.filter(parent=None)  # if is Recursive Tree

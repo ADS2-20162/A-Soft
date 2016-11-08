@@ -1,7 +1,7 @@
 app
-    //==================================
-    // app main routers
-    //==================================
+//==================================
+// app main routers
+//==================================
     .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/apps");
 
@@ -66,7 +66,6 @@ app
                 templateUrl: "app/views/pages/dashboard.wall.html"
             },
         }
-    })
-    ;
+    });
 
 });
