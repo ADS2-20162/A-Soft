@@ -25,6 +25,7 @@ class ManzanaAdmin(admin.ModelAdmin):
         (None, {'fields': ['manzana']}), ]
     inlines = [LoteInline]
 
+
 admin.site.register(Asociacion)
 admin.site.register(Lote)
 admin.site.register(Manzana, ManzanaAdmin)

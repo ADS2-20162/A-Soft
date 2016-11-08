@@ -57,7 +57,7 @@ class LogView(APIView):
                     for row in reversed(audit.readlines()):
 
                         data = row.split(']')
-                        print (data)
+                        print(data)
 
                         list.append({
                             "date": data[0].strip().strip('['),

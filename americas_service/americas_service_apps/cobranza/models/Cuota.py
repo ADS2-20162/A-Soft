@@ -1,16 +1,17 @@
 from django.db import models
 from .rubro_cobranza import RubroCobranza
 # from americas_service_apps.asociacion.models.InformacionLote import InformacionLote
+from americas_service_apps.asociacion.models.lote import Lote
 
 
 class Cuota(models.Model):
 
-    # lote = models.OneToOneField(InformacionLote)
+    lote = models.OneToOneField(Lote)
     rubro_cobranza = models.ForeignKey(RubroCobranza)
     # valor = models.DecimalField(
     #     decimal_places=2, max_digits=5, default=0.0)
     # area_lote = models.DecimalField(
-    #     decimal_places=2, max_digits=5, default=0.0)
+    #    decimal_places=2, max_digits=5, default=0.0)
     cuota = models.DecimalField(
         decimal_places=2, max_digits=10, null=True, blank=True)
 

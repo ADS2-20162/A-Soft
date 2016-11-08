@@ -1,5 +1,6 @@
 from django.db import models
-from americas_service_apps.eventos.choices.enums import PAGO_INASISTENCIA_CHOICES
+from americas_service_apps.eventos.choices.enums import \
+    PAGO_INASISTENCIA_CHOICES
 
 
 class Inasistencia(models.Model):

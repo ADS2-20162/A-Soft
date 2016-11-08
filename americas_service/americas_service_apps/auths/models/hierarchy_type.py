@@ -31,9 +31,11 @@ class HierarchyType(models.Model):
     created_at = models.DateTimeField(
         _('created at'), auto_now_add=True
     )
+
     updated_at = models.DateTimeField(
         _('updated at'), auto_now=True, blank=True, null=True
     )
+
     registered_by = models.TextField(
         blank=True, null=True
     )

@@ -65,7 +65,8 @@ class Menu(models.Model):
             'NULL if is root'
         ),
     )
-    parent = models.ForeignKey('self',  related_name='childrens',
+
+    parent = models.ForeignKey('self', related_name='childrens',
                                verbose_name=_('parent'), null=True, blank=True)
     created_at = models.DateTimeField(
         _('created at'), auto_now_add=True
