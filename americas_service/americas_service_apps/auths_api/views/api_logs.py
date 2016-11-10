@@ -1,3 +1,9 @@
+
+import os
+from django.conf import settings
+from django.utils.encoding import force_text
+import codecs
+
 # import the logging library
 import logging
 from django.utils.encoding import force_text
@@ -23,11 +29,6 @@ from rest_framework.parsers import JSONParser
 from django.utils.six import BytesIO
 # Get an instance of a logger
 log = logging.getLogger(__name__)
-
-import os
-from django.conf import settings
-from django.utils.encoding import force_text
-import codecs
 
 
 class LogView(APIView):
@@ -67,7 +68,6 @@ class LogView(APIView):
                             "ip": data[4].strip().strip('['),
                             "user": data[5].strip().strip('['),
                             "method": data[6].strip().strip('['),
-
                             "desc": data[7].strip(),
                         })
                 except:

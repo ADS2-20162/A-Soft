@@ -22,9 +22,9 @@
     };
 
     var _login = function(loginData) {
-        var data = "grant_type=" + config.grant_type +
-            "&client_id=" + config.client_id +
-            "&client_secret=" + config.client_secret +
+        var data = "grant_type=" + config.grantType +
+            "&client_id=" + config.clientId +
+            "&client_secret=" + config.clientSecret +
             "&username=" + loginData.username +
             "&password=" + loginData.password;
 

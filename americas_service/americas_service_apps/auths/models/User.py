@@ -7,9 +7,9 @@ from django.utils.text import capfirst, get_text_list
 # enums
 
 # models
-from americas_service_apps.auths.models.person import Person
+from .person import Person
 # managers
-# from americas_service_apps.auths.managers.UserManager import UserManager
+# from ..managers.UserManager import UserManager
 from django.contrib.auth.models import UserManager
 from django.conf import settings
 

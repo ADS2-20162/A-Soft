@@ -4,4 +4,8 @@ var config = {
     authsUrl: authsUrl,
 };
 
-app.value('config_access', config);
+app
+    .value('config_access', config);
+
+app
+    .value('CONFIG', config);

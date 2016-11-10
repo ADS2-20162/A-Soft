@@ -7,7 +7,8 @@ from django.db.models import signals
 from unicodedata import normalize
 from django.core.exceptions import ValidationError
 from django.core.exceptions import NON_FIELD_ERRORS
-from americas_service_apps.auths.choices.enums import GENRE_CHOICES
+
+from ..choices.enums import GENRE_CHOICES
 
 # models
 # others

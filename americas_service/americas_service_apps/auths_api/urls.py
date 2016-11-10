@@ -1,15 +1,13 @@
 from django.conf.urls import url, include
 from rest_framework import routers
 # from rest_framework_extensions.routers import ExtendedSimpleRouter
-from americas_service_apps.auths_api.views.permission_view import \
-    PermissionViewSet
+from .views.permission_view import PermissionViewSet
 
-from americas_service_apps.auths_api.views.menu_view import MenuViewSet
-from americas_service_apps.auths_api.views.user_view import UserViewSet, \
-    LocalUserInfoView
-from americas_service_apps.auths_api.views.user_menu_view import UserMenuView
-from americas_service_apps.auths_api.views.api_logs import LogView
-from americas_service_apps.auths_api.views.api_routers import RouterView
+from .views.menu_view import MenuViewSet
+from .views.user_view import UserViewSet, LocalUserInfoView
+from .views.api_user_menu import UserMenuView
+from .views.api_logs import LogView
+from .views.api_routers import RouterView
 
 
 # from .api_views import load_menu

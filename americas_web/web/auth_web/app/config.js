@@ -2,18 +2,19 @@
 var loginUrl = 'http://localhost:9000/auth_web/';
 var americasUrl = 'http://localhost:9000/americas_web/';
 
-var client_id = 'p1LJXTD2qGhNvHaxBAozJ8gt2Rw7NqBqhsXPJ5FQ';
-var client_secret = 'u2q6c6TSyVYU69nPQJt0CjdZW0JHsdjtjzCPG6Ts8tIK1fYwgFWxaL2Mo6b7OhmKAoVkdcQ0sVA7AZ4C5PY1XGagcOcgScQg7OZTgFY6qYofO70WFGZXVFxovMnCiZA3';
-var grant_type = 'password';
+var clientId = 'p1LJXTD2qGhNvHaxBAozJ8gt2Rw7NqBqhsXPJ5FQ';
+var clientSecret = 'u2q6c6TSyVYU69nPQJt0CjdZW0JHsdjtjzCPG6Ts8tIK1fYwgFWxaL2Mo6b7OhmKAoVkdcQ0sVA7AZ4C5PY1XGagcOcgScQg7OZTgFY6qYofO70WFGZXVFxovMnCiZA3';
+var grantType = 'password';
 
 var config = {
+
     baseUrl: baseUrl,
     loginUrl: loginUrl,
     americasUrl: americasUrl,
 
-    client_id: client_id,
-    client_secret: client_secret,
-    grant_type: grant_type,
+    clientId: clientId,
+    clientSecret: clientSecret,
+    grantType: grantType,
 };
 
 app

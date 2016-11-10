@@ -1,11 +1,11 @@
 app
-    .controller("AppCtrl", function($scope, $mdSidenav, $timeout, $rootScope, $window,
-        $document, $log, $mdBottomSheet, $mdToast) {
+    .controller("MainCtrl", function($scope, $mdSidenav, $timeout, $rootScope, 
+        $window, $document, $log, $mdBottomSheet, $mdToast) {
 
         // config
         $scope.app = {
             name: 'AUTH',
-            version: '1.0.1',
+            version: '1.0',
 
             setting: {
                 theme: {

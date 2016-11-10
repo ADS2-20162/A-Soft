@@ -4,7 +4,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.utils.text import capfirst, get_text_list
 # enums
-from americas_service_apps.auths.choices.enums import HIERARCHY_TYPE_CHOICES
+from ..choices.enums import HIERARCHY_TYPE_CHOICES
 # models
 
 
@@ -18,7 +18,9 @@ class HierarchyType(models.Model):
         max_length=50, choices=HIERARCHY_TYPE_CHOICES
     )
 
-    name = models.CharField(capfirst(_('name')), max_length=60)
+    name = models.CharField(
+        capfirst(_('name')), max_length=60
+    )
 
     level = models.BigIntegerField(
         capfirst(_('level')),

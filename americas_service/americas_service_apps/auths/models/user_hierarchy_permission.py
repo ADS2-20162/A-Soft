@@ -6,8 +6,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils.text import capfirst, get_text_list
 
 # models
-from americas_service_apps.auths.models.user import User
-from americas_service_apps.auths.models.hierarchy import Hierarchy
+from .user import User
+from .hierarchy import Hierarchy
 
 
 class UserHierarchyPermission(models.Model):
@@ -30,7 +30,6 @@ class UserHierarchyPermission(models.Model):
     end_date = models.DateTimeField(
         _('end date'), null=True, blank=True
     )
-
     created_at = models.DateTimeField(
         _('created at'), auto_now_add=True
     )

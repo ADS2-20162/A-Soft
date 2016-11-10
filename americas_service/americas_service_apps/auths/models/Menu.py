@@ -6,7 +6,7 @@ from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.utils.translation import ugettext_lazy as _
 from django.utils.text import capfirst, get_text_list
 # enums
-from americas_service_apps.auths.choices.enums import MODULE_CHOICES, BACKEND
+from ..choices.enums import MODULE_CHOICES, BACKEND
 # models
 
 
@@ -24,7 +24,6 @@ class Menu(models.Model):
     module = models.CharField(
         _('module'), max_length=50, choices=MODULE_CHOICES, default=BACKEND
     )
-
     state = models.CharField(
         capfirst(_('state or section')), max_length=50,
         help_text=_(
@@ -65,7 +64,6 @@ class Menu(models.Model):
             'NULL if is root'
         ),
     )
-
     parent = models.ForeignKey('self', related_name='childrens',
                                verbose_name=_('parent'), null=True, blank=True)
     created_at = models.DateTimeField(
