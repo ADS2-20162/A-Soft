@@ -65,8 +65,8 @@ Run the following command:
 
 	  >delete from auth_permission;
 
-<<Este proyecto esta basado en initial_ioteca desarrollado por el Ing. Angel Sullon>>
-Enlace github : 
+Este proyecto esta basado en initial_ioteca desarrollado por el Ing. Angel Sullon
+Enlace github : https://github.com/cursotaller
 
 Proyecto desarrollado por:
 
