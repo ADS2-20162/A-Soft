@@ -2,7 +2,8 @@
 //=================================================
 // LOGIN
 //=================================================
-    .controller('loginController', function($scope, $location, loginService, config, toastr, $window) {
+    .controller('loginController', function($scope, $location, loginService,
+    config, toastr, $window) {
 
     $scope.user = {
         username: "",
@@ -18,7 +19,9 @@
                 $window.location = config.americasUrl;
             },
             function(err) {
-                $scope.message = err.error_description;
+                //$scope.message = err.error_description;
+                //toastr.error(err.error, $scope.message);
+                $scope.message = JSON.stringify(err);
                 toastr.error(err.error, $scope.message);
             });
     };

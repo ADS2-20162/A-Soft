@@ -1,14 +1,15 @@
 app
-    .controller("AppCtrl", function($scope, $mdSidenav, $timeout, $rootScope, $window, $document, $log,
-        menuService, $mdBottomSheet, $mdToast, $location, toastr, authService, config) {
+    .controller("MainCtrl", function($scope, $mdSidenav, $timeout, $rootScope,
+        $window, $document, $log, menuService, $mdBottomSheet, $mdToast,
+        $location, toastr, authService, config) {
 
-        toastr.success('Consumiendo APIs con exito', 'Message');
+        //toastr.success('Consumiendo APIs con exito', 'Message');
 
         $scope.menu = menuService;
         // config
         $scope.app = {
             name: 'AMERICAS',
-            version: '1.0.1',
+            version: '1.0',
             setting: {
                 theme: {
                     primary: 'indigo',
