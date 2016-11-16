@@ -7,61 +7,11 @@
 
 var ngDevhres = angular.module("ngDevhres", []);
 
-/**
- * Declaración de variables
- */
-ngDevhres.value("safeValue", "Hi ngDevhres team");
-
-
-
-/**
- * Servicio security
- */
-ngDevhres
-    .service("security", function(safeValue) {
-        /**
-         * Ejemplo simple
-         *
-         * @returns {string}
-         */
-        this.doIt = function() {
-            return "Security.doIt() called: " + safeValue;
-        };
-
-        /**
-         * Verifica si un arrays está contenido en otro (usado para verificar roles)
-         *
-         * @param userRoles {array}
-         * @param rolesToCheck {Array}
-         * @returns {boolean}
-         */
-        this.checkRole = function(userRoles, rolesToCheck) {
-            if (rolesToCheck.length === 0) {
-                return true;
-            }
-            if (userRoles === null) {
-                return false;
-            }
-            if (userRoles !== null)
-                if (userRoles.length === 0) {
-                    return false;
-                }
-            for (var i = 0; i < userRoles.length; i++) {
-                if (rolesToCheck.indexOf(userRoles[i]) > -1) {
-                    return true;
-                }
-            }
-            return false;
-        };
-
-    });
-
-
-/**
- *  Menu
- */
 ngDevhres
 
+//==================================
+// Menu
+//==================================
     .directive('uiNav', ['$timeout', function($timeout) {
     return {
         restrict: 'AC',
@@ -71,7 +21,6 @@ ngDevhres
                 var active = li.parent()[0].querySelectorAll('.active');
                 li.toggleClass('active');
                 angular.element(active).removeClass('active');
-                //angular.element(active).removeClass('toggled');
             });
         }
     };
@@ -81,90 +30,32 @@ ngDevhres
 // SUBMENU TOGGLE
 // =========================================================================
 .directive('toggleSubmenu', function($timeout) {
-
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
-            /*element.click(function(){
-                element.parent().toggleClass('toggled');
-                element.parent().find('ul').stop(true, false).slideToggle(200);
-            })*/
-
             element.bind("click", function(e) {
-
                 element.parent().toggleClass('toggled');
-                //element.parent().find('ul').stop(true, false).slideToggle(200);
-                //var ul = element.find('ul');
-
                 var li = angular.element(this).parent();
-                //var active = li.parent()[0].querySelectorAll('.active');
                 li.toggleClass('active');
-                //angular.element(active).removeClass('active');
-                // angular.element(this).children().toggleClass("md-toggle-icon toggled");
             });
-            /*
-            element.find('a').bind('click', function(e) {
-                console.log("click");
-              element.parent().toggleClass('toggled');
-                element.parent().find('ul').stop(true, false).slideToggle(200);
-            });
-            */
         }
     };
 });
 
-ngDevhres.service("msg", function(safeValue, toastr) {
-
-    return {
-        yesDelete: function() {
-            toastr.success('Acción ejecutada correctamente', 'Eliminación exitosa!!');
-        },
-        yesUpdate: function() {
-            toastr.success('Acción ejecutada correctamente', 'Actualización exitosa!!');
-        },
-        yesInsert: function() {
-            toastr.success('Acción ejecutada correctamente', 'Se registró correctamente!!');
-        },
-        yesList: function() {
-            toastr.success('Acción ejecutada correctamente', 'Listado con exito!!');
-        },
-        noDelete: function() {
-            toastr.error('La acción eliminar no fue ejecutada.', 'Importante!!');
-        },
-        noDelete: function(msg) {
-            toastr.error(msg, 'Importante!!');
-        },
-        noUpdate: function() {
-            toastr.error('La acción actualizar no fue ejecutada.', 'Importante!!');
-        },
-        noUpdate: function(msg) {
-            toastr.error(msg, 'Importante!!');
-        },
-        noInsert: function() {
-            toastr.error('La acción agregar no fue ejecutada.', 'Importante!!');
-        },
-        noInsert: function(msg) {
-            toastr.error(msg, 'Importante!!');
-        },
-        noList: function() {
-            toastr.error('La acción listar no fue ejecutada.', 'Importante!!');
-        },
-        noList: function(msg) {
-            toastr.error(msg, 'Importante!!');
-        },
-
-
-    };
-});
-
-
 ngDevhres
 
+//==================================
+// 
+//==================================
     .filter('nospace', function() {
     return function(value) {
         return (!value) ? '' : value.replace(/ /g, '');
     };
 })
+
+//==================================
+// 
+//==================================
 
 .filter('humanizeDoc', function() {
     return function(doc) {
@@ -186,8 +77,6 @@ ngDevhres
         return str;
     };
 });
-
-
 
 ngDevhres
 
@@ -268,7 +157,6 @@ ngDevhres
         mybutton(var2, deshabilitar);
     }
 
-
     function myAccion(scope, page) {
         if (scope.page == page) {
             return;
@@ -326,7 +214,6 @@ ngDevhres
         rango(scope.pages - 1, scope.pages, scope);
     }
 
-
     function Algoritmo(scope, attrs) {
         parametrosDefault(scope, attrs);
         var adj = (scope.adjacent * 2) + 2;
@@ -364,8 +251,6 @@ ngDevhres
         anteriorSiguente(scope, 'siguente');
     }
 });
-
-
 
 ngDevhres
     .directive('appPagination', function() {
@@ -532,7 +417,6 @@ ngDevhres
                 setVariables(num);
             };
 
-
         }
 
     });
@@ -551,12 +435,6 @@ ngDevhres
             '               data-ng-click="listpag(prevParams,prevParams.page)">' +
             '        <ng-md-icon icon="fast_rewind" size="24"></ng-md-icon>' +
             '    </md-button>' +
-
-
-
-
-
-
             '    <md-button class=" md-raised  md-mini" aria-label="Settings" ng-show="pagesInRange[0].page != 1"' +
             '               data-ng-click="listpag(firstPageInRange[0].cp,firstPageInRange[0].cp.page)">' +
             '        ...' +
@@ -601,7 +479,7 @@ ngDevhres
     }]);
 
 
-ngDevhres.directive("tableResponsive", function($compile, $filter) {
+ngDevhres.directive("tableResponsive", function($compile, $filter) { //en construccion
     return {
         restrict: "A",
         compile: function(element, attrs) {
@@ -621,7 +499,6 @@ ngDevhres.directive("tableResponsive", function($compile, $filter) {
                         angular.element(current).append('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" aria-label="title" ng-click="elemAsc()"> <path style="fill: black" d="M11 7h-6l3-4z"/> <path style="fill: black" d="M5 9h6l-3 4z"/> </svg>');
                     }
 
-
                     var colspan = null;
                     if (current)
                         colspan = current.getAttribute("colspan");
@@ -635,14 +512,14 @@ ngDevhres.directive("tableResponsive", function($compile, $filter) {
                                 data_order = corresponding_th.getAttribute("data-order");
 
                                 if (data_order) {
-                                    console.log('data_order s:' + data_order);
+                                    console.log('data_order colspan:' + data_order);
                                     var x = 1;
                                     angular.element(corresponding_th).append('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" aria-label="title" ng-click="elemAsc()"> <path style="fill: black" d="M11 7h-6l3-4z"/> <path style="fill: black" d="M5 9h6l-3 4z"/> </svg>');
                                 }
 
                             } else {
                                 header_text.push(current.textContent + ":");
-                                console.warn("use thead ");
+                                //console.warn("use thead ");
                             }
                         }
                     else {
@@ -659,80 +536,3 @@ ngDevhres.directive("tableResponsive", function($compile, $filter) {
         }
     };
 });
-
-
-
-ngDevhres
-    .directive('appTitleSearch', function() {
-        return {
-            restrict: 'E',
-            scope: {
-                title: '@',
-                showInput: '@',
-                showLink: '@',
-                sref: '@',
-                minLength: '@',
-                actionMethod: '&',
-                term: '@'
-            },
-            templateUrl: 'app/views/directives/title-search/app_title_search.html',
-            link: function(scope, element, attrs) {
-                scope.param = {};
-                scope.showInput = scope.$eval(attrs.showInput);
-                scope.showLink = scope.$eval(attrs.showLink);
-
-                if (scope.minLength) {
-                    scope.minLength = parseInt(scope.minLength);
-                } else {
-                    scope.minLength = 3;
-                }
-
-                if (scope.term) {
-                    scope.param.q = scope.term;
-
-                } else {
-                    scope.param.q = '';
-                }
-
-                scope.search = function(query) {
-                    if (scope.param.q.length >= scope.minLength) {
-                        scope.actionMethod({
-                            term: query
-                        });
-                    }
-                };
-
-
-            }
-        }
-    });
-
-
-/*
-var myutil = angular.module("myutil", []);
-
-myutil.value("safeValue", "a safe value");
-
-myutil.factory("safeFactory", ['safeValue', function(p1) {
-    return { value : p1 };
-}]);
-function MySafeService(p1){
-    this.doIt = function() {
-        return "MySafeService.doIt() called: " + p1.value;
-    };
-}
-myutil.service("safeService", ['safeFactory', MySafeService]);
-
-myutil.provider("$safeService2", function() {
-    var provider = {};
-    provider.$get = ['safeService', function(p1) {
-        var service = {};
-        service.doService = function() {
-            console.log("safeService from provider: " + p1.doIt());
-        };
-        return service;
-    }];
-    return provider;
-});
-
-*/

@@ -1,6 +1,7 @@
 app.factory('authInterceptorService', function($injector, $q, localStorageService, $location, $window, config) {
 
     var _request = function(configs) {
+
         configs.headers = configs.headers || {};
         //config.headers.Authorization = 'Bearer vQTQa5kl6m5wlhPTlMj2CeVI0UN957';
         var authData = localStorageService.get('authorizationData');
@@ -13,12 +14,10 @@ app.factory('authInterceptorService', function($injector, $q, localStorageServic
 
     var _responseError = function(rejection) {
         var loggedIn = false;
-
         var authData = localStorageService.get('authorizationData');
         if (authData) {
             loggedIn = true;
         }
-
         console.log("rejection info:" + JSON.stringify(rejection));
 
         //HTTP_401_UNAUTHORIZED "Las credenciales de autenticación no se proveyeron."
@@ -26,6 +25,7 @@ app.factory('authInterceptorService', function($injector, $q, localStorageServic
             //var authService = $injector.get('authService');
             //authService.logOut();
             //$location.path('/notauthorized').replace();
+            
             $window.location = config.loginUrl;
         }
         // 403 {"detail":"Usted no tiene permiso para realizar esta acción."}

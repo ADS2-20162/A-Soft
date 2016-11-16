@@ -5,9 +5,9 @@
             <div hide-xs hide-sm ng-if="app.setting.asideFolded">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" style="
               width: 24px; height: 24px;">
-                    <path d="M 92 80 L 50 0 L 50 100 Z" fill="rgba(139, 195, 74, 0.8)"></path>
-                    <path d="M 8 80 L 50 0 L 50 100 Z" fill="#f3f3f3"></path>
-                </svg>
+                <path d="M 92 80 L 50 0 L 50 100 Z" fill="rgba(139, 195, 74, 0.8)"></path>
+                <path d="M 8 80 L 50 0 L 50 100 Z" fill="#f3f3f3"></path>
+            </svg>
             </div>
             <md-button class="md-icon-button" hide-gt-sm aria-label="Toggle Menu" ng-click="openAside()">
                 <md-icon md-svg-src="md-menu"></md-icon>
@@ -40,6 +40,7 @@
                             </md-button>
                             <md-menu-content width="4">
                                 <md-menu-item>
+                                    
                                     <md-button ng-click="logOut()">
                                         <div layout="row">
                                             <p flex>Salir</p>
@@ -49,8 +50,7 @@
                                 </md-menu-item>
                             </md-menu-content>
                         </md-menu>
-                        <md-button aria-label="photo" class="md-icon-button" ui-sref="apps">
-                            <!--ng-click="showGridBottomSheet()" -->
+                        <md-button aria-label="photo" class="md-icon-button"  ui-sref="apps"> <!--ng-click="showGridBottomSheet()" -->
                             <ng-md-icon icon="apps"></ng-md-icon>
                         </md-button>
                     </md-fab-actions>

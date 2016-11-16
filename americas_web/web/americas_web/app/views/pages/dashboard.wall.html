@@ -1,67 +1,40 @@
-<div class="row">
-    <div class="col-sm-6">
-        <div class="card">
-            <form>
-                <textarea class="form-control no-border p-md" rows="1" placeholder="Write something..."></textarea>
-            </form>
-            <div class="lt p">
-                <button md-ink-ripple class="md-btn md-raised pull-right p-h-md {{app.setting.theme.accent}}">Post</button>
-                <ul class="nav nav-pills nav-sm">
-                    <li><a href><i class="fa fa-camera"></i></a></li>
-                    <li><a href><i class="fa fa-video-camera"></i></a></li>
-                </ul>
-            </div>
+<div ng-cloak>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="100" layout="column">
+            <md-card ng-controllerx="CategoriaCtrl">
+                <md-card-header>
+                    <md-card-avatar>
+                        <img class="md-user-avatar" src="media/img/list/60.jpeg" />
+                    </md-card-avatar>
+                    <md-card-header-text>
+                        <span class="md-headline">Headline for title</span>
+                        <span class="md-subhead">subhead</span>
+                    </md-card-header-text>
+                </md-card-header>
+                <md-divider></md-divider>
+                <md-card-actions layout="row" layout-align="start center">
+                            <md-button class="md-icon-button" aria-label="Add" ui-srefx="">
+                                <md-tooltip md-autohide>Add</md-tooltip>
+                                <ng-md-icon icon="add" aria-label="Add"></ng-md-icon>
+                            </md-button>
+                            <md-card-icon-actions>
+                                
+                                <md-input-container class="md-block md-search">
+                                    <input placeholder="Buscar" ng-model="query" ng-keyup="buscar()">
+                                </md-input-container>
+                                <md-button class="md-icon-button" aria-label="Share">
+                                    <ng-md-icon icon="more_vert" aria-label="title"></ng-md-icon>
+                                </md-button>
+      
+
+
+                            </md-card-icon-actions>
+                        </md-card-actions>
+                        <md-divider></md-divider>
+                <md-card-content>
+                My content
+                </md-card-content>
+            </md-card>
         </div>
-        <div class="row row-sm">
-            <div class="col-xs-6">
-                <div class="card">
-                    <div class="card-heading">
-                        <h2>Trending</h2>
-                        <small>Guess what you would like</small>
-                    </div>
-                    <div class="list-group list-group-lg">
-                        <a href class="list-group-item text-ellipsis">
-                            <span class="pull-right">
-                              <i class="mdi-action-trending-up i-20 text-muted-dk"></i>
-                            </span> #TheWalkingDead
-                        </a>
-                        <a href class="list-group-item text-ellipsis">
-                            <span class="pull-right">
-                  <i class="mdi-action-trending-neutral i-20 text-muted-dk"></i>
-                </span> #Survivor
-                        </a>
-                        <a href class="list-group-item text-ellipsis">
-                            <span class="pull-right">
-                  <i class="mdi-action-trending-down i-20 text-muted-dk"></i>
-                </span> #Whitehouse
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6">
-                <div class="card {{app.setting.theme.primary}}">
-                    <div class="card-heading">
-                        <h2>Top Search</h2>
-                        <small>Something really cool</small>
-                    </div>
-                    <div class="list-group list-group-lg no-bg">
-                        <a href class="list-group-item">
-                            <span class="pull-right">
-                  1
-                </span> #Story
-                        </a>
-                        <a href class="list-group-item">
-                            <span class="pull-right">
-                  2
-                </span> #Nature
-                        </a>
-                        <a href class="list-group-item">
-                            <span class="pull-right">
-                  3
-                </span> #Sleeping
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </md-content>
+</div>

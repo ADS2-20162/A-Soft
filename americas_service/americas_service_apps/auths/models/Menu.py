@@ -48,7 +48,6 @@ class Menu(models.Model):
     is_active = models.BooleanField(
         capfirst(_('active')), default=True
     )
-
     is_abstract = models.BooleanField(
         capfirst(_('is_abstract')), default=False
     )
@@ -64,8 +63,10 @@ class Menu(models.Model):
             'NULL if is root'
         ),
     )
-    parent = models.ForeignKey('self', related_name='childrens',
-                               verbose_name=_('parent'), null=True, blank=True)
+    parent = models.ForeignKey(
+        'self', related_name='childrens', verbose_name=_('parent'),
+        null=True, blank=True
+    )
     created_at = models.DateTimeField(
         _('created at'), auto_now_add=True
     )

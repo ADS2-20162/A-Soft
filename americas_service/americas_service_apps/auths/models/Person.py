@@ -8,7 +8,7 @@ from unicodedata import normalize
 from django.core.exceptions import ValidationError
 from django.core.exceptions import NON_FIELD_ERRORS
 
-from ..choices.enums import GENRE_CHOICES
+from ..choices.enums import GENDER_CHOICES
 
 # models
 # others
@@ -21,39 +21,27 @@ class Person(models.Model):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
-    genero = models.CharField(max_length=40, choices=GENRE_CHOICES)
-
-    # tipo_documento = models.ForeignKey(
-    #     DocumentoIdentidad, null=False, blank=False)
-    documento_identidad = models.CharField(
+    gender = models.CharField(max_length=40, choices=GENDER_CHOICES)
+    national_id_doc = models.CharField(
         capfirst(_('DNI')), max_length=8, unique=True, null=False, blank=False,
         help_text=_('documento nacional de identidad'),
     )  # extend person documents in DocumentPersonType
-
     first_name = models.CharField(
-        capfirst(_('first name')), max_length=50, null=False, blank=False,
-        help_text=_(
-            'primer nombre'
-        ),
+        capfirst(_('first name')), max_length=50,
+        help_text=_('primer nombre'),
     )
     other_names = models.CharField(
         capfirst(_('other names')), max_length=50, null=True, blank=True,
-        help_text=_(
-            'otros nombres'
-        ),
+        help_text=_('otros nombres'),
     )
     last_name = models.CharField(
         capfirst(_('last name')), max_length=50, null=False, blank=False,
-        help_text=_(
-            'apellido paterno'
-        ),
+        help_text=_('apellido paterno'),
     )
     mother_last_name = models.CharField(
         capfirst(_('mother\'s last name')), max_length=50,
         null=False, blank=False,
-        help_text=_(
-            'apellido materno'
-        ),
+        help_text=_('apellido materno'),
     )
     birth_date = models.DateField(
         _('birth date'), null=True, blank=True
@@ -62,7 +50,6 @@ class Person(models.Model):
         capfirst(_('photo')), upload_to='persons',
         default='persons/default.png', null=True, blank=True,
     )
-
     created_at = models.DateTimeField(
         _('created at'), auto_now_add=True
     )
@@ -72,6 +59,7 @@ class Person(models.Model):
     registered_by = models.TextField(
         blank=True, null=True
     )
+
     # colocar debajo tus nuevos campos
 
     class Meta:
@@ -88,4 +76,4 @@ class Person(models.Model):
     def __str__(self):
         return '%s %s (%s)' % (self.first_name,
                                self.last_name,
-                               self.documento_identidad)
+                               self.national_id_doc)

@@ -12,7 +12,7 @@ from rest_framework.response import Response
 
 
 class StandardResultsSetPagination(pagination.PageNumberPagination):
-    page_size = 10
+    page_size = 5
     page_size_query_param = 'page_size'
 
     def siguente(self):
@@ -63,6 +63,7 @@ class StandardResultsSetPagination(pagination.PageNumberPagination):
                 'previous': self.anterior(),
                 'range': self.range(),
                 'page_size': self.page_size,
+                'user': self.request.user.username
             },
             'results': data
         })
@@ -71,7 +72,7 @@ class StandardResultsSetPagination(pagination.PageNumberPagination):
 class ModelPagination():
     pagination_class = StandardResultsSetPagination
     page = StandardResultsSetPagination
-    default_fields = 'codename'
+    default_fields = 'id'
 
     def search(self, fields, term):
         query = Q()
@@ -95,7 +96,7 @@ class ModelPagination():
         fields = self.request.query_params.get('fields', None)
         sort = self.request.query_params.get('sort', None)
         all = self.request.query_params.get('all', None)
-        print('all=', all)
+        print ('all=', all)
         pag = self.request.query_params.get('page', None)
         if (self.request.query_params.get('page', None) is None):
             pag = 1

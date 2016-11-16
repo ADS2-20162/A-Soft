@@ -11,19 +11,14 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # (admindocs) para mostrar las clases en el admin de DJango
     'django.contrib.admindocs',
 ]
 
 LOCAL_APPS = [
     'americas_service_apps.auths',
     'americas_service_apps.auths_api',
-    'americas_service_apps.asociacion',
-    'americas_service_apps.cobranza',
-    # App de Yerson
-    'americas_service_apps.eventos',
-    'americas_service_apps.pagos',
-    'americas_service_apps.contabilidad',
+    'americas_service_apps.catalogo',
+    'americas_service_apps.catalogo_api',
 ]
 
 THIRD_PARTY_APPS = [
@@ -34,18 +29,27 @@ THIRD_PARTY_APPS = [
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
+AUTHENTICATION_BACKENDS = [
+    'oauth2_provider.backends.OAuth2Backend',
+    # Uncomment following if you want to access the admin
+    # 'django.contrib.auth.backends.ModelBackend'
+]
+
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # adding
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.admindocs.middleware.XViewMiddleware',
+    # If you use SessionAuthenticationMiddleware, be sure it appears before OAuth2TokenMiddleware.
+    # SessionAuthenticationMiddleware is NOT required for using
+    # django-oauth-toolkit.
+    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'oauth2_provider.middleware.OAuth2TokenMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'americas_main.urls'
@@ -66,6 +70,8 @@ TEMPLATES = [
     },
 ]
 
+WSGI_APPLICATION = 'americas_main.wsgi.application'
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -84,34 +90,38 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 '''
 
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+
+STATIC_URL = '/static/'
+
+AUTH_USER_MODEL = 'auths.User'  # added
+
+CORS_ORIGIN_ALLOW_ALL = True  # False
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = ('127.0.0.1:6000', 'localhost:6000')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'oauth2_provider.ext.rest_framework.OAuth2Authentication',
     )
 }
 
-CORS_ORIGIN_ALLOW_ALL = True  # False
-CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_WHITELIST = ('127.0.0.1:6000', 'localhost:6000')
+AUTHENTICATION_BACKENDS = [
+    'oauth2_provider.backends.OAuth2Backend',
+    'django.contrib.auth.backends.ModelBackend',
+]
 
-WSGI_APPLICATION = 'americas_main.wsgi.application'
-
-AUTH_USER_MODEL = 'auths.User'  # added
-
-LANGUAGE_CODE = 'es'
-TIME_ZONE = 'America/Lima'
-USE_I18N = True
-USE_L10N = True
-USE_TZ = True
-
-STATIC_URL = '/static/'
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 FIXTURE_DIRS = (
     os.path.join(BASE_DIR, 'fixtures'),
 )
-
-# SESSION_COOKIE_AGE = 10 # 600
-# SESSION_EXPIRE_AT_BROWSER_CLOSE = True

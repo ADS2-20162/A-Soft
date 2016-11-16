@@ -17,27 +17,21 @@ class HierarchyType(models.Model):
     hierarchy_type = models.CharField(
         max_length=50, choices=HIERARCHY_TYPE_CHOICES
     )
-
     name = models.CharField(
         capfirst(_('name')), max_length=60
     )
-
     level = models.BigIntegerField(
         capfirst(_('level')),
     )
-
     is_active = models.BooleanField(
         capfirst(_('active')), default=True
     )
-
     created_at = models.DateTimeField(
         _('created at'), auto_now_add=True
     )
-
     updated_at = models.DateTimeField(
         _('updated at'), auto_now=True, blank=True, null=True
     )
-
     registered_by = models.TextField(
         blank=True, null=True
     )

@@ -1,18 +1,24 @@
+
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 
 # Register your models here.
-from americas_service_apps.auths.models.person import Person
-from americas_service_apps.auths.models.user import User
-from americas_service_apps.auths.models.hierarchy_type import HierarchyType
-from americas_service_apps.auths.models.hierarchy import Hierarchy
-from americas_service_apps.auths.models.menu import Menu
-from americas_service_apps.auths.models.user_hierarchy_group import \
-    UserHierarchyGroup
-from americas_service_apps.auths.models.user_hierarchy_permission import \
-    UserHierarchyPermission
+from .models.person import Person
+from .models.user import User
+from .models.hierarchy_type import HierarchyType
+from .models.hierarchy import Hierarchy
+from .models.menu import Menu
+from .models.user_hierarchy_group import UserHierarchyGroup
+from .models.user_hierarchy_permission import UserHierarchyPermission
+
+# forms
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django import forms
+from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth import get_user_model
 
 
 admin.site.register(ContentType)
@@ -21,6 +27,7 @@ admin.site.register(ContentType)
 class PermissionAdmin(admin.ModelAdmin):
     list_display = ("codename", "name", "content_type")
     search_fields = ("codename", "name", "content_type__app_label")
+
 
 admin.site.register(Permission, PermissionAdmin)
 
@@ -33,14 +40,6 @@ admin.site.register(UserHierarchyPermission)
 admin.site.register(Menu)
 
 admin.site.register(Person)
-
-
-# forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from django import forms
-from django.utils.translation import ugettext_lazy as _
-from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth import get_user_model
 
 
 CHOICES = (('ON', 'ON'),
@@ -128,7 +127,7 @@ class MyUserAdmin(UserAdmin):
         # print qr
         return qs
 
-    '''
+    """
     def formfield_for_choice_field(self, db_field, request, **kwargs):
         if db_field.name == 'status':
             kwargs['choices'] = (
@@ -150,6 +149,7 @@ class MyUserAdmin(UserAdmin):
         # )
         return super(MyUserAdmin, self).formfield_for_choice_field(db_field,
             request, **kwargs)
-    '''
+    """
+
 
 admin.site.register(User, MyUserAdmin)

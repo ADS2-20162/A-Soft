@@ -18,9 +18,7 @@ class UserHierarchyGroup(models.Model):
 
     user = models.ForeignKey(User, verbose_name=_('user'))
     hierarchy = models.ForeignKey(Hierarchy, verbose_name=_('hierarchy'))
-
     group = models.ForeignKey(Group, verbose_name=_('group'))
-
     access_info = models.TextField(
         null=True, blank=True
     )

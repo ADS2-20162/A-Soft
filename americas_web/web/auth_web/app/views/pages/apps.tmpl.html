@@ -1,6 +1,24 @@
+<!-- It's important that this be the first script loaded. -->
 <script>
+// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+/**
+ * @fileoverview
+ * Logging info for benchmarking purposes. Should be the first js file included.
+ */
+
+/* Stack of events that has been logged. */
 var eventLog = [];
 
+/**
+ * Logs an event.
+ * @param {string} name The name of the event (can be any string).
+ * @param {boolean=} opt_shouldLogTime If true, the event is used for
+ *     benchmarking and the time is logged. Otherwise, just push the event on
+ *     the event stack.
+ */
 function logEvent(name, opt_shouldLogTime) {
     if (opt_shouldLogTime)
         chrome.send('metricsHandler:logEventTime', [name]);
@@ -8,17 +26,19 @@ function logEvent(name, opt_shouldLogTime) {
 }
 
 logEvent('Tab.NewTabScriptStart', true);
-
 window.addEventListener('load', function(e) {
     logEvent('Tab.NewTabOnload', true);
 });
-
 document.addEventListener('DOMContentLoaded', function(e) {
     logEvent('Tab.NewTabDOMContentLoaded', true);
 });
 </script>
 <link rel="stylesheet" href="chrome://resources/css/text_defaults.css">
 <style>
+/* Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
 .bubble {
     position: absolute;
     white-space: normal;
@@ -38,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
 
 /* When the close button is there, we need more padding on the right of the
-   * bubble. */
+ * bubble. */
 
 .bubble-close:not([hidden]) ~ .bubble-content {
     -webkit-padding-end: 22px;
@@ -110,6 +130,10 @@ html[dir='rtl'] .bubble-close {
 }
 </style>
 <style>
+/* Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
 .expandable-bubble {
     -webkit-border-image: url(chrome://theme/IDR_APP_NOTIFICATION_SMALL_BUBBLE) 5 5 7 6 stretch;
     -webkit-box-sizing: border-box;
@@ -191,6 +215,10 @@ html[dir='rtl'] .bubble-close {
 }
 </style>
 <style>
+/* Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
 cr-menu {
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .50);
     background: white;
@@ -268,8 +296,8 @@ cr-menu > [selected][checked]:active::before {
 
 
 /* TODO(zvorygin) menu > [shortcutText]::after - this selector is much better,
-   * but it's buggy in current webkit revision, so I have to use [showShortcuts].
-   */
+ * but it's buggy in current webkit revision, so I have to use [showShortcuts].
+ */
 
 cr-menu[showShortcuts] >::after {
     -webkit-padding-start: 30px;
@@ -279,6 +307,15 @@ cr-menu[showShortcuts] >::after {
 }
 </style>
 <style>
+/* Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+
+/* NOTE: If you are using the drop-down style, you must first call
+ * MenuButton.createDropDownArrows() to initialize the CSS canvases that
+ * contain the arrow images. */
+
 button.menu-button.drop-down {
     background: white url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiNjMGMzYzYiIHdpZHRoPSI2IiBoZWlnaHQ9IjMiIHZpZXdib3g9IjAgMCA2IDMiPgogIDxwYXRoIGQ9Ik0wIDAgTDYgMCBMMyAzIiB3aWR0aD0iNiIgaGVpZ2h0PSIzIi8+Cjwvc3ZnPgo=) no-repeat center 4px;
     border: 1px solid rgb(192, 195, 198);
@@ -308,6 +345,10 @@ button.menu-button.using-mouse {
 }
 </style>
 <style>
+/* Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
 .trash {
     -webkit-appearance: none;
     background: none;

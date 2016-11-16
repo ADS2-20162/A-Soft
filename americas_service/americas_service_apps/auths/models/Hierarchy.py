@@ -46,6 +46,7 @@ class Hierarchy(models.Model):
     immediate_parent = models.ForeignKey(
         'self', related_name='immediate_childrens', null=True, blank=True
     )
+
     created_at = models.DateTimeField(
         _('created at'), auto_now_add=True
     )

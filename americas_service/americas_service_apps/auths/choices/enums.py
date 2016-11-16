@@ -28,10 +28,11 @@ HIERARCHY_TYPE_CHOICES = (
 
 M = 'M'
 F = 'F'
-GENRE_CHOICES = (
+GENDER_CHOICES = (
     (M, _('Masculino')),
     (F, capfirst(_('Femenino'))),
 )
+
 
 SOLTERO = 'Soltero'
 CASADO = 'Casado'
@@ -43,6 +44,7 @@ ESTADO_CIVIL_CHOICES = (
     (VIUDO, 'Viudo'),
     (DIVORCIADO, 'Divorsiado')
 )
+
 
 S = 'Si'
 N = 'No'

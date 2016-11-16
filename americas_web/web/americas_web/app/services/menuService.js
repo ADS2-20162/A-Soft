@@ -1,3 +1,4 @@
+
 app
 //------------------------------
 // TODO: API menu
@@ -60,7 +61,7 @@ app
     sections.push({
 
         menu: [{
-            title: 'System',
+            title: 'Auths System',
             type: 'toggle',
             state: 'auths.system',
             menu_items: [{
@@ -78,6 +79,29 @@ app
             }, {
                 title: 'Menu',
                 state: 'auths.system.menu',
+                type: 'link'
+            }, {
+                title: 'Log',
+                state: 'auths.system.log',
+                type: 'link'
+            }, ]
+        }]
+    });
+
+
+    sections.push({
+
+        menu: [{
+            title: 'Catálogo',
+            type: 'toggle',
+            state: 'catalogo.catalogo',
+            menu_items: [{
+                title: 'Categorías',
+                state: 'catalogo.catalogo.categorias',
+                type: 'link'
+            }, {
+                title: 'Autores',
+                state: 'catalogo.catalogo.autores',
                 type: 'link'
             }, ]
         }]
@@ -99,3 +123,8 @@ app
         sections: sections,
     };
 });
+
+
+
+
+

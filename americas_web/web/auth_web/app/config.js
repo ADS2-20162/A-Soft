@@ -1,9 +1,9 @@
-﻿var baseUrl = 'http://localhost:9001/';
-var loginUrl = 'http://localhost:9000/auth_web/';
-var americasUrl = 'http://localhost:9000/americas_web/';
+﻿var baseUrl = 'http://localhost:9000/';
+var loginUrl = 'http://localhost:9001/auth_web/';
+var americasUrl = 'http://localhost:9001/americas_web/';
 
-var clientId = 'Lhw3dGKyOtWIuf2gtEPJiLCb6Eyqsb6zEMuCmvai';
-var clientSecret = '29PGN05H7JqpBUKKQmwp9JCUp7Qg8cVvWXSYIZRjI7Vu1pKNWZVXgVW9OtYJo1zVsMpxVOIZBKvYbkNArsh6mXcYaPZSkaRfgrzQwC2JllrEGRp4fL2XQo0WJCcZCJVm';
+var clientId = 'cWhAtHswV0vxlYCvq3CqOlCt158UzCwKeh5Yd5Ep';
+var clientSecret = '1uJhsDjvyEEyfciqcLQhfYi8baTXAuSfwSOcuowigufT8IOsSgvQPJVz3xp7w4nvPp1PYfoS0vd8DuQItgmGdIhqZUr93yEk3lgftcGmTImuRuhf93QLS6gQjVJpm2sX';
 var grantType = 'password';
 
 var config = {
@@ -15,13 +15,17 @@ var config = {
     clientId: clientId,
     clientSecret: clientSecret,
     grantType: grantType,
+
 };
 
-app
-    .value('config', config);
+app.value('config', config);
 
 app
     .run(function($rootScope, $state, $stateParams, $window, loginService) {
+        // It's very handy to add references to $state and $stateParams to the $rootScope
+        // so that you can access them from any scope within your applications.For example,
+        // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
+        // to active whenever 'contacts.list' or one of its decendents is active.
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
@@ -32,6 +36,7 @@ app
             $window.location = loginUrl;
         }
         /******************************************************************/
+
     })
 
 .config(function($httpProvider) {

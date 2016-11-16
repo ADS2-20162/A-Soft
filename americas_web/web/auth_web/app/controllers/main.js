@@ -1,52 +1,49 @@
 app
-    .controller("MainCtrl", function($scope, $mdSidenav, $timeout, $rootScope, 
-        $window, $document, $log, $mdBottomSheet, $mdToast) {
+    .controller("MainCtrl", function($scope, $mdSidenav, $timeout, $rootScope, $window,
+    $document, $log, $mdBottomSheet, $mdToast) {
 
-        // config
-        $scope.app = {
-            name: 'AUTH',
-            version: '1.0',
+    // config
+    $scope.app = {
+        name: 'AUTH',
+        version: '1.0.1',
 
-            setting: {
-                theme: {
-                    primary: 'indigo',
-                    accent: 'purple',
-                    warn: 'amber'
-                },
-                asideFolded: false
+        setting: {
+            theme: {
+                primary: 'indigo',
+                accent: 'purple',
+                warn: 'amber'
             },
-            search: {
-                content: '',
-                show: false
-            }
-        };
-
-        $scope.setTheme = function(theme) {
-            $scope.dynamicTheme = theme;
-            $scope.app.setting.theme = theme;
-        };
-
-        $rootScope.$on('$stateChangeSuccess', openPage);
-
-        function openPage() {
-            $scope.closeAside();
+            asideFolded: false
+        },
+        search: {
+            content: '',
+            show: false
         }
+    };
 
-        $scope.goBack = function() {
-            $window.history.back();
-        };
+    $scope.setTheme = function(theme) {
+        $scope.dynamicTheme = theme;
+        $scope.app.setting.theme = theme;
+    };
 
-        $scope.openAside = function() {
-            console.log("open aside");
-            $timeout(function() {
-                $mdSidenav('aside').open();
-            });
-        };
-        $scope.closeAside = function() {
-            console.log("close aside");
-            $timeout(function() {
-                $document.find('#aside').length && $mdSidenav('aside').close();
-            });
-        };
+    $rootScope.$on('$stateChangeSuccess', openPage);
 
-    });
+    function openPage() {
+        $scope.closeAside();
+    }
+
+    $scope.goBack = function() {
+        $window.history.back();
+    };
+
+    $scope.openAside = function() {
+        console.log("open aside");
+        $timeout(function() { $mdSidenav('aside').open(); });
+    };
+    
+    $scope.closeAside = function() {
+        console.log("close aside");
+        $timeout(function() { $document.find('#aside').length && $mdSidenav('aside').close(); });
+    };
+
+});

@@ -1,4 +1,5 @@
 app
+
 //==================================
 // app main routers
 //==================================
@@ -6,23 +7,20 @@ app
     $urlRouterProvider.otherwise("/access/signin");
 
     $stateProvider
-
-    //==================================
-    // Not Authorized page
-    //==================================
         .state("notauthorized", {
-        url: "/notauthorized",
-        templateUrl: "app/views/pages/notauthorized.html"
-    })
+            //==================================
+            // Not Authorized page
+            //==================================
+            url: "/notauthorized",
+            templateUrl: "app/views/pages/notauthorized.html"
+        })
 
-    //==================================
-    // Apps page (Main)
-    //==================================
     .state("apps", {
+        //==================================
+        // Apps page (Main)
+        //==================================
         url: "/apps",
-        data: {
-            page: 'Apps page'
-        },
+        data: { page: 'Apps page' },
         views: {
             '': {
                 templateUrl: "app/views/pages/apps.tmpl.html"
@@ -30,19 +28,20 @@ app
         }
     })
 
-    //==================================
-    // 404 page
-    //==================================
     .state('404', {
+        //==================================
+        // 404 page
+        //==================================
         url: '/404',
         templateUrl: 'app/views/pages/404.html'
     })
 
-    //==================================
-    // 505 page
-    //==================================
     .state('505', {
+        //==================================
+        // 505 page
+        //==================================
         url: '/505',
         templateUrl: 'app/views/pages/505.html'
     });
+
 });

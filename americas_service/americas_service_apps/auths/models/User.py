@@ -9,7 +9,7 @@ from django.utils.text import capfirst, get_text_list
 # models
 from .person import Person
 # managers
-# from ..managers.UserManager import UserManager
+
 from django.contrib.auth.models import UserManager
 from django.conf import settings
 

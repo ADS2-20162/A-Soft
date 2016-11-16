@@ -8,4 +8,4 @@ app
     .value('config_access', config);
 
 app
-    .value('CONFIG', config);
+    .constant('CONFIG', config);

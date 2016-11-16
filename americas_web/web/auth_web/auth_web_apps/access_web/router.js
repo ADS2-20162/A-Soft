@@ -16,63 +16,61 @@ app
                 }
             };
         };
+
         this.setCollectionUrl = function(url) {
             urlCollection = url;
         };
     });
 
 app
-//==================================
-// base routers
-//==================================
-    .run(function(routers) {
+    .run(function(router) {
         // no recupera el foco porque el run se genera después del config
         router.setUpRoutes(); // activar para generar router dinámicos aquí
     })
+    //==================================
+    // base routers
+    //==================================
     .config(function($stateProvider, $urlRouterProvider, routerProvider) {
 
         routerProvider.setCollectionUrl('http://localhost:9000/api/auths/routers/');
 
         $stateProvider
-
-        //==================================
-        // access page
-        //==================================
             .state('access', {
-            url: '/access',
-            template: '<div class="indigo bg-big"><div ui-view class="fade-in-down smooth"></div></div>'
-        })
+                //==================================
+                // access page
+                //==================================
+                url: '/access',
+                template: '<div class="indigo bg-big"><div ui-view class="fade-in-down smooth"></div></div>'
+            })
+            .state('access.signin', {
+                //==================================
+                // signin page
+                //==================================
 
-        //==================================
-        // signin page
-        //==================================
-        .state('access.signin', {
-            url: '/signin',
-            controller: "loginController",
-            templateUrl: 'auth_web_apps/access/views/pages/login.html'
-        })
+                url: '/signin',
+                controller: "loginController",
+                templateUrl: 'auth_web_apps/access_web/views/pages/login.html'
+            })
+            .state('access.signup', {
+                //==================================
+                // signup page
+                //==================================
 
-        //==================================
-        // signup page
-        //==================================
-        .state('access.signup', {
-            url: '/signup',
-            templateUrl: 'auth_web_apps/access/views/pages/signup.html'
-        })
-
-        //==================================
-        // forgot-password page
-        //==================================
-        .state('access.forgot-password', {
-            url: '/forgot-password',
-            templateUrl: 'auth_web_apps/access/views/pages/forgot-password.html'
-        })
-
-        //==================================
-        // lockme page
-        //==================================
-        .state('access.lockme', {
-            url: '/lockme',
-            templateUrl: 'auth_web_apps/access/views/pages/lockme.html'
-        });
+                url: '/signup',
+                templateUrl: 'auth_web_apps/access_web/views/pages/signup.html'
+            })
+            .state('access.forgot-password', {
+                //==================================
+                // forgot-password page
+                //==================================
+                url: '/forgot-password',
+                templateUrl: 'auth_web_apps/access_web/views/pages/forgot-password.html'
+            })
+            .state('access.lockme', {
+                //==================================
+                // lockme page
+                //==================================
+                url: '/lockme',
+                templateUrl: 'auth_web_apps/access_web/views/pages/lockme.html'
+            });
     });
