@@ -19,6 +19,9 @@ LOCAL_APPS = [
     'americas_service_apps.auths_api',
     'americas_service_apps.catalogo',
     'americas_service_apps.catalogo_api',
+    'americas_service_apps.asociacion',
+    'americas_service_apps.cobranza',
+    'americas_service_apps.contabilidad',
 ]
 
 THIRD_PARTY_APPS = [
