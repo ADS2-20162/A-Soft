@@ -22,6 +22,8 @@ LOCAL_APPS = [
     'americas_service_apps.asociacion',
     'americas_service_apps.cobranza',
     'americas_service_apps.contabilidad',
+    'americas_service_apps.evento',
+    'americas_service_apps.pago',
 ]
 
 THIRD_PARTY_APPS = [
