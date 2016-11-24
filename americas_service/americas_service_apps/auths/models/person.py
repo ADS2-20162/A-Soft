@@ -22,7 +22,7 @@ class Person(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     gender = models.CharField(max_length=40, choices=GENDER_CHOICES)
-    national_id_doc = models.CharField(
+    documento_identidad = models.CharField(
         capfirst(_('DNI')), max_length=8, unique=True, null=False, blank=False,
         help_text=_('documento nacional de identidad'),
     )  # extend person documents in DocumentPersonType
@@ -68,12 +68,12 @@ class Person(models.Model):
         '''
         unique_together = (
             ('first_name', 'other_names', 'last_name', 'mother_last_name',
-                'national_id_doc'),
-            ('national_id_doc'),
+                'documento_identidad'),
+            ('documento_identidad'),
         )
         '''
 
     def __str__(self):
         return '%s %s (%s)' % (self.first_name,
                                self.last_name,
-                               self.national_id_doc)
+                               self.documento_identidad)
