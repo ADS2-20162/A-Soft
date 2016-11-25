@@ -12,7 +12,5 @@ router.register(r'autors', AutorViewSet, 'autors-view')
 router.register(r'libros', LibroViewSet, 'libros-view')
 
 urlpatterns = [
-
     url(r'^', include(router.urls)),
-
 ]

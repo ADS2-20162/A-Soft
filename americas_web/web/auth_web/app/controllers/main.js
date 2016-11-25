@@ -10,8 +10,8 @@ app
         setting: {
             theme: {
                 primary: 'indigo',
-                accent: 'purple',
-                warn: 'amber'
+                accent: 'green',
+                warn: 'red'
             },
             asideFolded: false
         },

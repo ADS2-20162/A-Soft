@@ -5,7 +5,6 @@ app
     .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-
         .state('auths', {
             //==================================
             // auths layout base
@@ -22,7 +21,6 @@ app
                     templateUrl: 'app/views/content.html'
                 }
             }
-
         })
         .state('auths.system', {
             //==================================

@@ -8,7 +8,7 @@ app
     $scope.menu = menuService;
     $scope.app = {
         name: 'Americas',
-        version: '1.0.1',
+        version: '1.0',
 
         setting: {
             theme: {

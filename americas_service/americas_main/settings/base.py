@@ -20,6 +20,7 @@ LOCAL_APPS = [
     'americas_service_apps.catalogo',
     'americas_service_apps.catalogo_api',
     'americas_service_apps.asociacion',
+    'americas_service_apps.asociacion_api',
     'americas_service_apps.cobranza',
     'americas_service_apps.contabilidad',
     'americas_service_apps.evento',

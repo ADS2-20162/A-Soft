@@ -6,7 +6,8 @@ var config = {
     loginUrl: loginUrl,
 };
 
-app.value('config', config);
+app
+    .value('config', config);
 
 app
     .config(function($httpProvider) {
@@ -45,7 +46,7 @@ app
     $mdDateLocaleProvider.shortDays = [
         'Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'
     ];
-    
+
     // Can change week display to start on Domingo.
     $mdDateLocaleProvider.firstDayOfWeek = 0;
 
@@ -178,4 +179,48 @@ app.constant('ROUTERS', [{
         "templateUrl": "americas_web_apps/catalogo_web/views/autores/form.html"
     }
 
+},{
+    "asociacion": {
+        "url": "/asociacion",
+        "views": {
+            "": {
+                "templateUrl": "app/views/layout.html"
+            },
+            "aside": {
+                "templateUrl": "app/views/aside.html"
+            },
+            "content": {
+                "templateUrl": "app/views/content.html"
+            }
+        }
+    },
+    "asociacion.asociacion": {
+        "url": "/asociacion",
+        "template": "<div ui-view ></div>"
+    }
+},{
+    "asociacion.asociacion.asociacion": {
+        "url": "/asociacion",
+        "data": {
+            "section": "Asociación",
+            "page": "Asociación"
+        },
+        "templateUrl": "americas_web_apps/asociacion_web/views/asociacion/index.html"
+    },
+    "asociacion.asociacion.asociacionNew": {
+        "url": "/asociacion/new",
+        "data": {
+            "section": "Asociación",
+            "page": "Asociación"
+        },
+        "templateUrl": "americas_web_apps/asociacion_web/views/asociacion/form.html"
+    },
+    "asociacion.asociacion.asociacionEdit": {
+        "url": "/asociacion/:id/edit",
+        "data": {
+            "section": "Asociación",
+            "page": "Asociación"
+        },
+        "templateUrl": "americas_web_apps/catalogo_web/views/asociacion/form.html"
+    }
 }]);

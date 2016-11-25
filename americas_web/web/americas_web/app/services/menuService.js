@@ -1,4 +1,3 @@
-
 app
 //------------------------------
 // TODO: API menu
@@ -22,14 +21,14 @@ app
         state: 'app.dashboard',
         type: 'link'
     });
-
+/**
     sections.push({
         //title: 'Sección ui',
         //type: 'heading',
         menu: [{
             title: 'U.I.',
-            type: 'toggle',
             state: 'ui',
+            type: 'toggle',
             menu_items: [{
                 title: 'Test 1 uno más',
                 state: 'ui.test1',
@@ -57,14 +56,16 @@ app
             }, ]
         }]
     });
-
+**/
     sections.push({
 
         menu: [{
-            title: 'Auths System',
+            title: 'Sistema',
             type: 'toggle',
             state: 'auths.system',
-            menu_items: [{
+            menu_items: [
+            /**
+            {
                 title: 'xx',
                 state: 'auths.system.xx',
                 type: 'link'
@@ -72,8 +73,9 @@ app
                 title: 'Grupos',
                 state: 'auths.system.ct',
                 type: 'link'
-            }, {
-                title: 'Permission',
+            }, **/
+            {
+                title: 'Permisos',
                 state: 'auths.system.permission',
                 type: 'link'
             }, {
@@ -107,6 +109,24 @@ app
         }]
     });
 
+    sections.push({
+
+        menu: [{
+            title: 'Asociación',
+            type: 'toggle',
+            state: 'asociacion.lista',
+            menu_items: [{
+                title: 'Asociacion',
+                state: '',
+                type: 'link'
+            }, {
+                title: 'Cuenta bancaria',
+                state: '',
+                type: 'link'
+            }, ]
+        }]
+    });
+
     authService.getMenu().then(function(r) {
         menu = r.data;
         console.log("menuService.authService.getMenu():" + JSON.stringify(menu));
@@ -123,8 +143,3 @@ app
         sections: sections,
     };
 });
-
-
-
-
-

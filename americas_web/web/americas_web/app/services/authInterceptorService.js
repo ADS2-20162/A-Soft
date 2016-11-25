@@ -1,4 +1,5 @@
-app.factory('authInterceptorService', function($injector, $q, localStorageService, $location, $window, config) {
+app.factory('authInterceptorService', function($injector, $q, localStorageService,
+    $location, $window, config) {
 
     var _request = function(configs) {
 
@@ -25,7 +26,7 @@ app.factory('authInterceptorService', function($injector, $q, localStorageServic
             //var authService = $injector.get('authService');
             //authService.logOut();
             //$location.path('/notauthorized').replace();
-            
+
             $window.location = config.loginUrl;
         }
         // 403 {"detail":"Usted no tiene permiso para realizar esta acción."}

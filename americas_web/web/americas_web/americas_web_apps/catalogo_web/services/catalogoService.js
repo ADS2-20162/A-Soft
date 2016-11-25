@@ -1,5 +1,4 @@
 app
-
     .factory("catalogoService", function($resource, configCatalogo) {
     var url = configCatalogo.catalogoUrl;
     return {
