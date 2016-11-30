@@ -18,16 +18,17 @@ class Asociacion(models.Model):
                               max_length=100, null=False)
     denominacion = models.CharField(
         _('denominacion asociacion'), max_length=150, null=True)
-    cuenta_banco = models.OneToOneField(CuentaBanco)
+    cuenta_banco = models.OneToOneField(CuentaBanco,
+                                        related_name='asociaciones')
     website = models.URLField(null=True, blank=True)
-    logo = models.ImageField(null=False, blank=True)
+    logo = models.ImageField(null=True, blank=True)
     created_at = models.DateTimeField(_('created at'), auto_now_add=True)
     update_at = models.DateTimeField(
-        _('update at'), auto_now=True, blank=True, null=True)
+        _('update at'), auto_now=True)
 
     class Meta:
         verbose_name = _('asociacion')
         verbose_name_plural = _('asociaciones')
 
     def __str__(self):
-        return '%s - %s' % (self.ruc, self.nombre)
+        return self.ruc

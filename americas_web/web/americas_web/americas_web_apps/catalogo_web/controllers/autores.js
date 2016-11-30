@@ -1,6 +1,6 @@
 app
 // =========================================================================
-// Show View and Delete Autor 
+// Show View and Delete Autor
 // =========================================================================
     .controller("AutorCtrl", function($scope, $state, $stateParams, catalogoService,
     $window, $mdDialog, $log, toastr, $filter) {

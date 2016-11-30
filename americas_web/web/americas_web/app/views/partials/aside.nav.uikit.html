@@ -119,14 +119,9 @@
      </li>
       <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
       <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
-
       <div ng-if="section.children" ng-repeat="child in section.children">
-      
       <menu-link section="child" ng-if="child.type === 'link'"></menu-link>
-
       <menu-toggle section="child" ng-if="child.type === 'toggle'"></menu-toggle>
-
-      
       </div>
 </div>
 -->

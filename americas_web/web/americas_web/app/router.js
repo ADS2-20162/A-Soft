@@ -56,7 +56,7 @@ app
         //==================================
         .state("apps", {
             url: "/apps",
-            data: { page: 'Apps page' },
+            data: { page: 'Apps' },
             views: {
                 '': {
                     templateUrl: "app/views/pages/apps.tmpl.html"

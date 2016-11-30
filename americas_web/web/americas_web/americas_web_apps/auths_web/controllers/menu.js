@@ -12,10 +12,10 @@ app
         $scope.list = function(params) {
             //logService.error('yeeeeeeeee');
 
-            $log.log('log message');
-            $log.debug('debug message');
-            $log.info('info message');
-            $log.warn('warn message');
+            //$log.log('log message');
+            //$log.debug('debug message');
+            //$log.info('info message');
+            //$log.warn('warn message');
             //$log.error('error message');
             //throw Error('gone wrong in greet');
 
@@ -67,6 +67,7 @@ app
         };
 
         //mdDialog
+
         $scope.cancel = function() {
             $mdDialog.cancel();
         };

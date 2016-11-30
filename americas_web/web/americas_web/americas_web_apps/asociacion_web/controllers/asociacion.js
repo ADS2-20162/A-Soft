@@ -1,10 +1,14 @@
 app
-    .controller('AsociacionCtrl', ['$scope', function($scope, $state, $stateParams,
+    .controller('AsociacionCtrl', function($scope, $state, $stateParams,
         asociacionService, $window, $mdDialog, $log, toastr) {
-        $scope.fields = 'ruc, nombre, denominacion, website, cuentabancaria';
+        $scope.fields = 'ruc, name';
         var params = {};
         $scope.lista = [];
-        $scope.asociacion = {};
+        $scope.asociacion = {
+            name: 'Asociacion',
+            detail_name: 'Trabajar con asociacion',
+            version: 'v1.0',
+        };
 
         $scope.list = function(params) {
             $scope.isLoading = true;
@@ -16,7 +20,18 @@ app
                 toastr.error(err.data.results.detail, err.status + ' ' + err.statusText);
             });
         };
+
         $scope.list(params);
+
+     /*   $scope.listCuentaBanco = function(i) {
+            asociacionService.CuentaBanco.list({ cuenta_banco: i }).$promise.then(function(r) {
+                $scope.listaCuentaBanco = r;
+            }, function(err) {
+                console.log("Err " + err);
+            });
+        };
+
+        $scope.listCuentaBanco();*/
 
         $scope.buscar = function() {
             params.page = 1;
@@ -25,15 +40,16 @@ app
             $scope.list(params);
         };
 
-        $scope.onReorder = function(order) { //TODO
+        $scope.onReorder = function(order) {
+            //Todo
             $log.log('Order: ' + order);
         };
 
         $scope.delete = function(d) {
             if ($window.confirm("Seguro?")) {
-                catalogoService.Categoria.delete({ id: d.id }, function(r) {
-                    $log.log("Se eliminó la categoría:" + JSON.stringify(d));
-                    toastr.success('Se eliminó la categoría ' + d.nombre, 'Categoría');
+                asociacionService.Asociacion.delete({ id: d.id }, function(r) {
+                    $log.log("Se eliminó la asociacion:" + JSON.stringify(d));
+                    toastr.success('Se eliminó la asociacion ' + d.ruc, 'Asociacion');
                     $scope.list(params);
                 }, function(err) {
                     $log.log("Error in delete:" + JSON.stringify(err));
@@ -41,7 +57,7 @@ app
                 });
             }
         };
-    }])
+    })
     .controller("AsociacionSaveCtrl", function($scope, $state, $stateParams,
         asociacionService, $window, $mdDialog, $log, toastr) {
         //Valores iniciales
@@ -63,7 +79,7 @@ app
             if ($scope.asociacion.id) {
                 asociacionService.Asociacion.update({ id: $scope.asociacion.id }, $scope.asociacion, function(r) {
                     $log.log("r: " + JSON.stringify(r));
-                    toastr.success('Se editó la Asociacion ' + r.nombre, 'Asociacion');
+                    toastr.success('Se editó la asociacion ' + r.nombre, 'Asociacion');
                     $state.go('asociacion.asociacion.asociacion');
                 }, function(err) {
                     $log.log("Error in update:" + JSON.stringify(err));

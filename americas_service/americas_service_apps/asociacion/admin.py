@@ -15,6 +15,11 @@ from .models.socio_lote import SocioLote
 # admin.site.register(ContentType)
 
 
+class AsociacionAdmin(admin.ModelAdmin):
+
+    list_display = ('ruc', 'nombre', 'denominacion', 'cuenta_banco', 'website')
+
+
 class LoteInline(admin.TabularInline):
     model = Lote
     extra = 1
@@ -26,7 +31,7 @@ class ManzanaAdmin(admin.ModelAdmin):
     inlines = [LoteInline]
 
 
-admin.site.register(Asociacion)
+admin.site.register(Asociacion, AsociacionAdmin)
 admin.site.register(Lote)
 admin.site.register(Manzana, ManzanaAdmin)
 # admin.site.register(ManzanaLote)

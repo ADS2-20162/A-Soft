@@ -65,7 +65,7 @@
               {
                 series: { pie: { show: true, innerRadius: 0.4, stroke: { width: 3 }, label: { show: true, threshold: 0.05 } } },
                 colors: ['{{app.color.info}}','{{app.color.warning}}','{{app.color.success}}','{{app.color.accent}}'],
-                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },   
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
                 tooltip: true,
                 tooltipOpts: { content: '%s: %p.0%' }
               }
@@ -112,9 +112,9 @@
           <div ui-jp="plot" ui-refresh="showData" ui-options="
             [
               {
-                data: {{plot_line}}, 
-                points: { show: true, radius: 4, lineWidth: 3, fillColor: '{{app.color.accent}}'}, 
-                lines:  { show: {{showData}}, lineWidth: 0, fill: 0.5, fillColor: '{{app.color.accent}}' }, 
+                data: {{plot_line}},
+                points: { show: true, radius: 4, lineWidth: 3, fillColor: '{{app.color.accent}}'},
+                lines:  { show: {{showData}}, lineWidth: 0, fill: 0.5, fillColor: '{{app.color.accent}}' },
                 color:'#fff'
               }
             ],
@@ -142,7 +142,7 @@
               [
                 { data: {{plot_line_1}}, points: { show: true, radius: 0}, splines: { show: true, tension: 0.45, lineWidth: 1, fill: 0.2 } },
                 { data: {{plot_line_2}}, points: { show: true, radius: 0}, splines: { show: true, tension: 0.45, lineWidth: 1, fill: 1 } }
-              ], 
+              ],
               {
                 colors: ['#cccccc', '{{getColor(app.setting.theme.primary, 500)}}'],
                 series: { shadowSize: 3 },
@@ -167,7 +167,7 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>
   </div>
   <div class="row row-xs" ng-controller="VectorMapCtrl">
     <div class="col-md-8">
@@ -175,7 +175,7 @@
         <div class="panel-heading b-b b-light">World Market</div>
         <div class="panel-body">
           <p class="m-b-lg text-muted">World map, world regions, countries and cities.</p>
-          <div class="m-b-lg" style="height:243px;" ui-jp="vectorMap" ui-options="{            
+          <div class="m-b-lg" style="height:243px;" ui-jp="vectorMap" ui-options="{
             map: 'world_mill_en',
             markers: {{world_markers}},
             normalizeFunction: 'polynomial',

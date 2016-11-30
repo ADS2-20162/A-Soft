@@ -1,4 +1,5 @@
 var app = angular.module("app", [
+    //functions for material
     'ui.router',
     'ngResource',
     'ngAnimate',
@@ -6,10 +7,10 @@ var app = angular.module("app", [
     'ngSanitize',
     'ngMaterial',
     'ngMdIcons',
-
+    //funtion ?
     'LocalStorageModule',
     'toastr',
-
+    //my functions
     'ngDevhres',
     'ngMessages',
 ]);

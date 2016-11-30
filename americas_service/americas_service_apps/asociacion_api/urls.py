@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from rest_framework import routers
 
-from .asociacion_view import AsociacionViewSet
+from .views.asociacion import AsociacionViewSet
 
 router = routers.DefaultRouter()
 

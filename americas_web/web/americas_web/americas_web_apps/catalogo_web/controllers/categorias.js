@@ -1,11 +1,11 @@
 app
 // =========================================================================
-// Show View and Delete Categoria 
+// Show View and Delete Categoria
 // =========================================================================
-    .controller("CategoriaCtrl", function($scope, $state, $stateParams,
-    catalogoService, $window, $mdDialog, $log, toastr) {
+    .controller("CategoriaCtrl", function($scope, $state, $stateParams, catalogoService,
+    $window, $mdDialog, $log, toastr) {
     //Valores iniciales
-    $scope.fields = 'name,codename';
+    $scope.fields = 'name, codename';
     var params = {};
     $scope.lista = [];
     $scope.categoria = {};
@@ -23,7 +23,7 @@ app
             toastr.error(err.data.results.detail, err.status + ' ' + err.statusText);
         });
     };
-    
+
     $scope.list(params);
 
     $scope.buscar = function() {
