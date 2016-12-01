@@ -118,4 +118,29 @@
         },
         "templateUrl": "americas_web_apps/asociacion/views/asociacion/form.html"
     },
+}, {
+    "asociacion.asociacion.banco": {
+      "url": "/banco",
+      "data": {
+        "section": "Banco",
+        "page": "Banco"
+      },
+      "templateUrl": "americas_web_apps/banco_web/views/banco/index.html"
+    },
+    "asociacion.asociacion.bancoNew": {
+      "url": "/banco/new",
+      "data": {
+        "section": "Banco",
+        "page": "Banco"
+      },
+      "templateUrl": "americas_web_apps/banco_web/views/banco/form.html"
+    },
+    "asociacion.asociacion.bancoEdit": {
+      "url": "/banco/:id/edit",
+      "data": {
+        "section": "Banco",
+        "page": "Banco"
+      },
+      "templateUrl": "americas_web_apps/banco_web/views/banco/form.html"
+    }
 }]

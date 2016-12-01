@@ -118,6 +118,10 @@ app
                 title: 'Asociacion',
                 state: 'asociacion.asociacion.asociacion',
                 type: 'link'
+            }, {
+                title: 'Cuenta bancaria',
+                state: 'asociacion.asociacion.banco',
+                type: 'link'
             }, ]
         }]
     });
