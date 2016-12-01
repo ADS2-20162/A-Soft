@@ -1,0 +1,53 @@
+<div ng-cloak>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="100" layout="column">
+            <md-card ng-controller="AsistenciaCtrl">
+                <md-card-header>
+                    <md-card-avatar>
+                        <img class="md-user-avatar" src="media/img/list/60.jpeg" />
+                    </md-card-avatar>
+                    <md-card-header-text>
+                        <span class="md-headline">Asistencias</span>
+                        <span class="md-subhead">Trabajar con Asistencias</span>
+                    </md-card-header-text>
+                </md-card-header>
+                <md-divider></md-divider>
+                <md-card-actions layout="row" layout-align="start center">
+                    <md-card-icon-actions>
+                        <md-input-container class="md-block md-search">
+                            <input placeholder="Buscar" ng-model="query" ng-keyup="buscar()">
+                        </md-input-container>
+                        <md-button class="md-icon-button" aria-label="Add" ui-sref="eventos.eventos.asistenciaNew">
+                            <md-tooltip md-autohide>Add</md-tooltip>
+                            <ng-md-icon icon="add" aria-label="Add"></ng-md-icon>
+                        </md-button>
+                    </md-card-icon-actions>
+                </md-card-actions>
+                <md-card-content>
+                    <table table-responsive>
+                        <md-progress-linear layout-fill md-mode="indeterminate" ng-hide="!isLoading"></md-progress-linear>
+                        <thead md-on-reorder="onReorder">
+                            <tr>
+                                <th>#</th>
+                                <th class="col-hidden" data-order="nombre">Nombre</th>
+                                <th class="col-hidden" data-order="codigo">Fecha</th>
+                                <th>Hora</th>
+                                <th colspan="2" class="align-options">acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="d in lista">
+                                <td> </td>
+                                <td> {{ d.evento}} </td>
+                                <td> {{ d.socio_lote }} </td>
+                                <td> {{ d.dni_representante}} </td>
+                                <td> {{ d.estado}} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </md-table-container>
+                </md-card-content>
+            </md-card>
+        </div>
+    </md-content>
+</div>

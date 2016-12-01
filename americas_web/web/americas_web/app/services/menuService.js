@@ -126,6 +126,25 @@ app
         }]
     });
 
+    sections.push({
+
+        menu: [{
+            title: 'Eventos',
+            type: 'toggle',
+            state: 'eventos.eventos',
+            menu_items: [{
+                title: 'Eventos',
+                state: 'eventos.eventos.eventos',
+                type: 'link'
+            }, {
+                title: 'Asistencias',
+                state: 'eventos.eventos.asistencias',
+                type: 'link'
+            }, ]
+        }]
+    });
+
+
     authService.getMenu().then(function(r) {
         menu = r.data;
         console.log("menuService.authService.getMenu():" + JSON.stringify(menu));

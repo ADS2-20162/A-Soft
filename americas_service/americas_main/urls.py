@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^api/catalogo/', include('americas_service_apps.catalogo_api.urls')),
     url(r'^api/asociacion/',
         include('americas_service_apps.asociacion_api.urls')),
+    url(r'^api/eventos/',
+        include('americas_service_apps.eventos_api.urls')),
 ]

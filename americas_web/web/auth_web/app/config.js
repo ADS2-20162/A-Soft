@@ -2,8 +2,8 @@
 var loginUrl = 'http://localhost:9001/auth_web/';
 var americasUrl = 'http://localhost:9001/americas_web/';
 
-var clientId = 'YaLVjj1VxyPWCipW0WJwripb2mogrD0AFf2j2785';
-var clientSecret = 'Ik1OJhxdNfommewvPGbA2c4eqffmKIVEPZp3RjXeGo5PYkZYV173fs0zKibXKpI1qQkaXZjtaOggK2cDJzlAdBQuYmbMqbCtDJ2jK58eJeDfTmKwihCIqrS3mqSHmukQ';
+var clientId = '37Zwq40NhZn1G82M4fwUcN5ssYpdphz9FkwtSP1d';
+var clientSecret = 'IgqbuR0GV4aTKmmf5GGgG6OEqrjavJKHv4GLtBuer8bUyH0ZkoycZhG56uJejNbOC3B9lZJBNeSBCovoZnkRVNnyQTqfGYUAuYht7OflZ2EgPRchKlHUZD7J8mMpq5yF';
 var grantType = 'password';
 
 var config = {
