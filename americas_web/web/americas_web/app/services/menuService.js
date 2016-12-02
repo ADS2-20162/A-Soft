@@ -122,6 +122,10 @@ app
                 title: 'Cuenta bancaria',
                 state: 'asociacion.asociacion.banco',
                 type: 'link'
+            },{
+                title: 'Persona',
+                state: 'asociacion.asociacion.persons',
+                type: 'link'
             }, ]
         }]
     });

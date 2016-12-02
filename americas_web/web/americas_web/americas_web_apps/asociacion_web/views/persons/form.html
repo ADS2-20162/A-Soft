@@ -1,28 +1,38 @@
 <div ng-cloak>
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="100" layout="column">
-            <form name="dForm" role="form" ng-controller="AsociacionSaveCtrl">
+            <form name="dForm" role="form" ng-controller="PersonSaveCtrl">
                 <md-card>
                     <md-card-header>
                         <md-card-avatar>
                             <img class="md-user-avatar" src="media/img/list/60.jpeg" />
                         </md-card-avatar>
                         <md-card-header-text>
-                            <span class="md-headline">Asociacion</span>
+                            <span class="md-headline">{{asociacion.name}}</span>
+                            <span class="md-subhead">{{asociacion.detail_name}} {{asociacion.version}}</span>
                         </md-card-header-text>
                     </md-card-header>
                     <md-card-content>
                         <div layout-gt-sm="row">
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>RUC</label>
-                                <input name="ruc" ng-model="asociacion.ruc" required>
+                                <label>Genero</label>
+                                <input name="gender" ng-model="person.gender" required>
                                 <div ng-messages="dForm.nombre.$error">
                                     <div ng-message="required">Campo requerido.</div>
                                 </div>
                             </md-input-container>
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>DNI</label>
+                                <input name="documento_identidad" ng-model="person.documento_identidad" required>
+                                <div ng-messages="dForm.nombre.$error">
+                                    <div ng-message="required">Campo requerido.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-sm="row">
                             <md-input-container class="md-block" flex-gt-sm>
                                 <label>Nombre</label>
-                                <input name="nombre" ng-model="asociacion.nombre" required>
+                                <input name="first_name" ng-model="person.first_name" required>
                                 <div ng-messages="dForm.nombre.$error">
                                     <div ng-message="required">Campo requerido.</div>
                                 </div>
@@ -30,24 +40,38 @@
                         </div>
                         <div layout-gt-sm="row">
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Denominacion</label>
-                                <input name="denominacion" ng-model="asociacion.denominacion">
-                            </md-input-container>
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label>Website</label>
-                                <input name="website" ng-model="asociacion.website">
-                            </md-input-container>
-                        </div>
-                        <div layout-gt-sm="row">
-                            <md-input-container class="md-block" flex-gt-sm>
-                                <label>Cuenta bancaria</label>
-                                <input name="cuenta_banco" ng-model="asociacion.cuenta_banco">
+                                <label>Otros nombre</label>
+                                <input name="other_names" ng-model="person.other_names" required>
+                                <div ng-messages="dForm.nombre.$error">
+                                    <div ng-message="required">Campo requerido.</div>
+                                </div>
                             </md-input-container>
                         </div>
                         <div layout-gt-sm="row">
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Logo</label>
-                                <input name="logo" ng-model="asociacion.logo">
+                                <label>Apellido paterno</label>
+                                <input name="last_name" ng-model="person.last_name" required>
+                                <div ng-messages="dForm.nombre.$error">
+                                    <div ng-message="required">Campo requerido.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-sm="row">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Apellido materno</label>
+                                <input name="mother_last_name" ng-model="person.mother_last_name" required>
+                                <div ng-messages="dForm.nombre.$error">
+                                    <div ng-message="required">Campo requerido.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div layout-gt-sm="row">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Fecha de nacimiento</label>
+                                <input name="birth_date" ng-model="person.birth_date" required>
+                                <div ng-messages="dForm.nombre.$error">
+                                    <div ng-message="required">Campo requerido.</div>
+                                </div>
                             </md-input-container>
                         </div>
                     </md-card-content>
@@ -60,8 +84,8 @@
                         </md-card-icon-actions>
                         <md-button type="reset" ng-click="cancel()" class="md-raised">Cancelar</md-button>
                         <md-button type="submit" ng-click="save()" class="md-raised md-primary">
-                            <span ng-show="asociacion.id == null">Create</span>
-                            <span ng-show="asociacion.id">Actualizar</span>
+                            <span ng-show="person.id == null">Create</span>
+                            <span ng-show="person.id">Actualizar</span>
                         </md-button>
                     </md-card-actions>
                 </md-card>

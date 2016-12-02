@@ -96,160 +96,177 @@ app
 
 
 app
-    .constant('ROUTERS', [
-  {
-    "estado.nombre": {
-      "url": "/url",
-      "data": {
-        "section": "Menu name",
-        "page": "Menu item name"
-      },
-      "templateUrl": "appname_web_apps/appname_web/views/model/index.html"
-    },
-    
-  },
-  {
-    "catalogo": {
-      "url": "/catalogo",
-      "views": {
-        "": {
-          "templateUrl": "app/views/layout.html"
+    .constant('ROUTERS', [{
+        "estado.nombre": {
+            "url": "/url",
+            "data": {
+                "section": "Menu name",
+                "page": "Menu item name"
+            },
+            "templateUrl": "appname_web_apps/appname_web/views/model/index.html"
         },
-        "aside": {
-          "templateUrl": "app/views/aside.html"
+
+    }, {
+        "catalogo": {
+            "url": "/catalogo",
+            "views": {
+                "": {
+                    "templateUrl": "app/views/layout.html"
+                },
+                "aside": {
+                    "templateUrl": "app/views/aside.html"
+                },
+                "content": {
+                    "templateUrl": "app/views/content.html"
+                }
+            }
         },
-        "content": {
-          "templateUrl": "app/views/content.html"
+        "catalogo.catalogo": {
+            "url": "/catalogo",
+            "template": "<div ui-view ></div>"
         }
-      }
-    },
-    "catalogo.catalogo": {
-      "url": "/catalogo",
-      "template": "<div ui-view ></div>"
-    }
-  },
-  {
-    "catalogo.catalogo.categorias": {
-      "url": "/categorias",
-      "data": {
-        "section": "Catálogo",
-        "page": "Categorías"
-      },
-      "templateUrl": "americas_web_apps/catalogo_web/views/categorias/index.html"
-    },
-    "catalogo.catalogo.categoriasNew": {
-      "url": "/categorias/new",
-      "data": {
-        "section": "Catálogo",
-        "page": "Categorías"
-      },
-      "templateUrl": "americas_web_apps/catalogo_web/views/categorias/form.html"
-    },
-    "catalogo.catalogo.categoriasEdit": {
-      "url": "/categorias/:id/edit",
-      "data": {
-        "section": "Catálogo",
-        "page": "Categorías"
-      },
-      "templateUrl": "americas_web_apps/catalogo_web/views/categorias/form.html"
-    }
-  },
-  {
-    "catalogo.catalogo.autores": {
-      "url": "/autores",
-      "data": {
-        "section": "Catálogo",
-        "page": "Autores"
-      },
-      "templateUrl": "americas_web_apps/catalogo_web/views/autores/index.html"
-    },
-    "catalogo.catalogo.autoresNew": {
-      "url": "/autores/new",
-      "data": {
-        "section": "Catálogo",
-        "page": "Autores"
-      },
-      "templateUrl": "americas_web_apps/catalogo_web/views/autores/form.html"
-    },
-    "catalogo.catalogo.autoresEdit": {
-      "url": "/autores/:id/edit",
-      "data": {
-        "section": "Catálogo",
-        "page": "Autores"
-      },
-      "templateUrl": "americas_web_apps/catalogo_web/views/autores/form.html"
-    }
-  },
-  {
-    "asociacion": {
-      "url": "/asociacion",
-      "views": {
-        "": {
-          "templateUrl": "app/views/layout.html"
+    }, {
+        "catalogo.catalogo.categorias": {
+            "url": "/categorias",
+            "data": {
+                "section": "Catálogo",
+                "page": "Categorías"
+            },
+            "templateUrl": "americas_web_apps/catalogo_web/views/categorias/index.html"
         },
-        "aside": {
-          "templateUrl": "app/views/aside.html"
+        "catalogo.catalogo.categoriasNew": {
+            "url": "/categorias/new",
+            "data": {
+                "section": "Catálogo",
+                "page": "Categorías"
+            },
+            "templateUrl": "americas_web_apps/catalogo_web/views/categorias/form.html"
         },
-        "content": {
-          "templateUrl": "app/views/content.html"
+        "catalogo.catalogo.categoriasEdit": {
+            "url": "/categorias/:id/edit",
+            "data": {
+                "section": "Catálogo",
+                "page": "Categorías"
+            },
+            "templateUrl": "americas_web_apps/catalogo_web/views/categorias/form.html"
         }
-      }
-    },
-    "asociacion.asociacion": {
-      "url": "/asociacion",
-      "template": "<div ui-view ></div>"
-    }
-  },
-  {
-    "asociacion.asociacion.asociacion": {
-      "url": "/asociacion",
-      "data": {
-        "section": "Asociación",
-        "page": "Asociación"
-      },
-      "templateUrl": "americas_web_apps/asociacion_web/views/asociacion/index.html"
-    },
-    "asociacion.asociacion.asociacionNew": {
-      "url": "/asociacion/new",
-      "data": {
-        "section": "Asociación",
-        "page": "Asociación"
-      },
-      "templateUrl": "americas_web_apps/asociacion_web/views/asociacion/form.html"
-    },
-    "asociacion.asociacion.asociacionEdit": {
-      "url": "/asociacion/:id/edit",
-      "data": {
-        "section": "Asociación",
-        "page": "Asociación"
-      },
-      "templateUrl": "americas_web_apps/asociacion_web/views/asociacion/form.html"
-    },
-  },
-  {
-    "asociacion.asociacion.banco": {
-      "url": "/banco",
-      "data": {
-        "section": "Asociación",
-        "page": "Banco"
-      },
-      "templateUrl": "americas_web_apps/asociacion_web/views/banco/index.html"
-    },
-    "asociacion.asociacion.bancoNew": {
-      "url": "/banco/new",
-      "data": {
-        "section": "Asociación",
-        "page": "Banco"
-      },
-      "templateUrl": "americas_web_apps/asociacion_web/views/banco/form.html"
-    },
-    "asociacion.asociacion.bancoEdit": {
-      "url": "/banco/:id/edit",
-      "data": {
-        "section": "Asociación",
-        "page": "Banco"
-      },
-      "templateUrl": "americas_web_apps/asociacion_web/views/banco/form.html"
-    }
-  }
-]);
+    }, {
+        "catalogo.catalogo.autores": {
+            "url": "/autores",
+            "data": {
+                "section": "Catálogo",
+                "page": "Autores"
+            },
+            "templateUrl": "americas_web_apps/catalogo_web/views/autores/index.html"
+        },
+        "catalogo.catalogo.autoresNew": {
+            "url": "/autores/new",
+            "data": {
+                "section": "Catálogo",
+                "page": "Autores"
+            },
+            "templateUrl": "americas_web_apps/catalogo_web/views/autores/form.html"
+        },
+        "catalogo.catalogo.autoresEdit": {
+            "url": "/autores/:id/edit",
+            "data": {
+                "section": "Catálogo",
+                "page": "Autores"
+            },
+            "templateUrl": "americas_web_apps/catalogo_web/views/autores/form.html"
+        }
+    }, {
+        "asociacion": {
+            "url": "/asociacion",
+            "views": {
+                "": {
+                    "templateUrl": "app/views/layout.html"
+                },
+                "aside": {
+                    "templateUrl": "app/views/aside.html"
+                },
+                "content": {
+                    "templateUrl": "app/views/content.html"
+                }
+            }
+        },
+        "asociacion.asociacion": {
+            "url": "/asociacion",
+            "template": "<div ui-view ></div>"
+        }
+    }, {
+        "asociacion.asociacion.asociacion": {
+            "url": "/asociacion",
+            "data": {
+                "section": "Asociación",
+                "page": "Asociación"
+            },
+            "templateUrl": "americas_web_apps/asociacion_web/views/asociacion/index.html"
+        },
+        "asociacion.asociacion.asociacionNew": {
+            "url": "/asociacion/new",
+            "data": {
+                "section": "Asociación",
+                "page": "Asociación"
+            },
+            "templateUrl": "americas_web_apps/asociacion_web/views/asociacion/form.html"
+        },
+        "asociacion.asociacion.asociacionEdit": {
+            "url": "/asociacion/:id/edit",
+            "data": {
+                "section": "Asociación",
+                "page": "Asociación"
+            },
+            "templateUrl": "americas_web_apps/asociacion_web/views/asociacion/form.html"
+        },
+    }, {
+        "asociacion.asociacion.banco": {
+            "url": "/banco",
+            "data": {
+                "section": "Asociación",
+                "page": "Banco"
+            },
+            "templateUrl": "americas_web_apps/asociacion_web/views/banco/index.html"
+        },
+        "asociacion.asociacion.bancoNew": {
+            "url": "/banco/new",
+            "data": {
+                "section": "Asociación",
+                "page": "Banco"
+            },
+            "templateUrl": "americas_web_apps/asociacion_web/views/banco/form.html"
+        },
+        "asociacion.asociacion.bancoEdit": {
+            "url": "/banco/:id/edit",
+            "data": {
+                "section": "Asociación",
+                "page": "Banco"
+            },
+            "templateUrl": "americas_web_apps/asociacion_web/views/banco/form.html"
+        }
+    },  {
+        "asociacion.asociacion.persons": {
+            "url": "/persons",
+            "data": {
+                "section": "Asociación",
+                "page": "Persons"
+            },
+            "templateUrl": "americas_web_apps/asociacion_web/views/persons/index.html"
+        },
+        "asociacion.asociacion.personNew": {
+            "url": "/persons/new",
+            "data": {
+                "section": "Asociación",
+                "page": "Persons"
+            },
+            "templateUrl": "americas_web_apps/asociacion_web/views/persons/form.html"
+        },
+        "asociacion.asociacion.personEdit": {
+            "url": "/persons/:id/edit",
+            "data": {
+                "section": "Asociación",
+                "page": "Persons"
+            },
+            "templateUrl": "americas_web_apps/asociacion_web/views/persons/form.html"
+        }
+    }]);

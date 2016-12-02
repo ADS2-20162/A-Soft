@@ -4,7 +4,7 @@ from americas_service_apps.auths.choices.enums import GENDER_CHOICES
 
 
 class PersonSerializer(serializers.ModelSerializer):
-	# gender = serializers.s
+    gender = serializers.ChoiceField(choices=GENDER_CHOICES)
 
     class Meta:
         model = Person

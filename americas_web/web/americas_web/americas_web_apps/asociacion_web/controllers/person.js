@@ -1,18 +1,18 @@
 app
-    .controller('AsociacionCtrl', function($scope, $state, $stateParams,
+    .controller('PersonCtrl', function($scope, $state, $stateParams,
         asociacionService, $window, $mdDialog, $log, toastr) {
-        $scope.fields = 'ruc, name';
+        $scope.fields = 'name';
         var params = {};
         $scope.lista = [];
-        $scope.asociacion = {
+        $scope.person = {
             name: 'Asociacion',
-            detail_name: 'Trabajar con asociacion',
+            detail_name: 'Trabajar con personas',
             version: 'v1.0',
         };
 
         $scope.list = function(params) {
             $scope.isLoading = true;
-            asociacionService.Asociacion.query(params, function(r) {
+            asociacionService.Person.query(params, function(r) {
                 $scope.lista = r;
                 $scope.isLoading = false;
             }, function(err) {
@@ -20,6 +20,18 @@ app
                 toastr.error(err.data.results.detail, err.status + ' ' + err.statusText);
             });
         };
+
+        $scope.list(params);
+
+        /*   $scope.listCuentaBanco = function(i) {
+               asociacionService.CuentaBanco.list({ cuenta_banco: i }).$promise.then(function(r) {
+                   $scope.listaCuentaBanco = r;
+               }, function(err) {
+                   console.log("Err " + err);
+               });
+           };
+
+           $scope.listCuentaBanco();*/
 
         $scope.buscar = function() {
             params.page = 1;
@@ -35,9 +47,9 @@ app
 
         $scope.delete = function(d) {
             if ($window.confirm("Seguro?")) {
-                asociacionService.Asociacion.delete({ id: d.id }, function(r) {
-                    $log.log("Se eliminó la asociacion:" + JSON.stringify(d));
-                    toastr.success('Se eliminó la asociacion ' + d.ruc, 'Asociacion');
+                asociacionService.Person.delete({ id: d.id }, function(r) {
+                    $log.log("Se eliminó la persona:" + JSON.stringify(d));
+                    toastr.success('Se eliminó la persona ' + d.ruc, 'Person');
                     $scope.list(params);
                 }, function(err) {
                     $log.log("Error in delete:" + JSON.stringify(err));
@@ -46,14 +58,18 @@ app
             }
         };
     })
-    .controller("AsociacionSaveCtrl", function($scope, $state, $stateParams,
+    .controller("PersonSaveCtrl", function($scope, $state, $stateParams,
         asociacionService, $window, $mdDialog, $log, toastr) {
         //Valores iniciales
-        $scope.asociacion = {};
+        $scope.person = {
+            name: 'Asociacion',
+            detail_name: 'Agregando personas',
+            version: 'v1.0',
+        };
 
         $scope.sel = function() {
-            asociacionService.Asociacion.get({ id: $stateParams.id }, function(r) {
-                $scope.asociacion = r;
+            asociacionService.Person.get({ id: $stateParams.id }, function(r) {
+                $scope.person = r;
             }, function(err) {
                 $log.log("Error in get:" + JSON.stringify(err));
                 toastr.error(err.data.detail, err.status + ' ' + err.statusText);
@@ -64,20 +80,20 @@ app
         }
 
         $scope.save = function() {
-            if ($scope.asociacion.id) {
-                asociacionService.Asociacion.update({ id: $scope.asociacion.id }, $scope.asociacion, function(r) {
+            if ($scope.person.id) {
+                asociacionService.Person.update({ id: $scope.person.id }, $scope.person, function(r) {
                     $log.log("r: " + JSON.stringify(r));
-                    toastr.success('Se editó la asociacion ' + r.nombre, 'Asociacion');
-                    $state.go('asociacion.asociacion.asociacion');
+                    toastr.success('Se editó la person ' + r.nombre, 'Person');
+                    $state.go('asociacion.asociacion.persons');
                 }, function(err) {
                     $log.log("Error in update:" + JSON.stringify(err));
                     toastr.error(err.data.detail, err.status + ' ' + err.statusText);
                 });
             } else {
-                asociacionService.Asociacion.save($scope.asociacion, function(r) {
+                asociacionService.Person.save($scope.person, function(r) {
                     $log.log("r: " + JSON.stringify(r));
-                    toastr.success('Se insertó la asociacion ' + r.nombre, 'Asociacion');
-                    $state.go('asociacion.asociacion.asociacion');
+                    toastr.success('Se insertó la person ' + r.nombre, 'Person');
+                    $state.go('asociacion.asociacion.persons');
                 }, function(err) {
                     $log.log("Error in save:" + JSON.stringify(err));
                     toastr.error(err.data.detail, err.status + ' ' + err.statusText);
@@ -86,6 +102,6 @@ app
         };
 
         $scope.cancel = function() {
-            $state.go('asociacion.asociacion.asociacion');
+            $state.go('asociacion.asociacion.persons');
         };
     });

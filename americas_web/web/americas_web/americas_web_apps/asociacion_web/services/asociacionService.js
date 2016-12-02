@@ -10,5 +10,8 @@ app
             CuentaBanco: $resource(url + "banco/:id/", { 'id': '@id' }, {
                 "update": { method: 'PUT' },
             }),
+            Person: $resource(url + "persons/:id/", { 'id': '@id' }, {
+                "update": { method: 'PUT' },
+            }),
         };
     });
